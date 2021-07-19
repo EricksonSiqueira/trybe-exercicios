@@ -6,3 +6,6 @@ python
 html
 css
 javascrpit
+Inteligencia emocional
+Liderança
+
