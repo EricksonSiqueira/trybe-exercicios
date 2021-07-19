@@ -6,6 +6,6 @@ python
 html
 css
 javascrpit
+Colaboração
 Inteligencia emocional
 Liderança
-
