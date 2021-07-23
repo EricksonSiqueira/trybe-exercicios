@@ -21,6 +21,11 @@ div:nth-child(6){
 div:nth-child(7){
     color: rgb(230, 81, 230);
 }
+
 div h3 {
     font-size: 22px;
+}
+
+div:nth-child(odd){
+    font-style: italic;
 }
