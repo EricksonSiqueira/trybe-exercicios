@@ -1,3 +1,22 @@
 div:hover {
     border: 1px solid grey;
 }
+
+div:nth-child(3){
+    color: blue;
+}
+div:nth-child(4){
+    color: rgb(117, 117, 14);
+}
+
+div:nth-child(5){
+    color: green;
+}
+
+div:nth-child(6){
+    color: rgb(43, 41, 41);
+}
+
+div:nth-child(7){
+    color: rgb(230, 81, 230);
+}
