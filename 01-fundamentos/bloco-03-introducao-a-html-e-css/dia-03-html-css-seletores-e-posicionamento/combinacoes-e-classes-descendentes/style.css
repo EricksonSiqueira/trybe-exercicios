@@ -28,3 +28,6 @@ li em {
 ul:nth-of-type(1) li:nth-child(-n+3){
     color:blue
 }
+.pink-bg {
+    background-color: pink;
+}
