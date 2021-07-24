@@ -28,6 +28,28 @@ li em {
 ul:nth-of-type(1) li:nth-child(-n+3){
     color:blue
 }
+
 .pink-bg {
     background-color: pink;
 }
+
+ul a[href*="stackoverflow"]:hover {
+    color: orangered;
+}
+
+ul a[href*="w3schools"]:hover {
+    color: #069862;
+}
+
+ul a[href*="mozilla"]:hover {
+    color: black;
+}
+
+ul a[href*="devdocs"]:hover {
+    color: grey;
+}
+
+ul a[href*="trybe"]:hover {
+    color: #2EC18C;
+}
+
