@@ -48,7 +48,7 @@ h2 {
 h3 {
     margin: 15px 0;
 }
-p, table, img {
+p, table, figure {
     margin: 15px;
 }
 table {
@@ -61,6 +61,10 @@ table th, table td {
 
 footer {
      text-align: center;
+}
+figcaption {
+    position: relative;
+    margin-left: 3%;
 }
 
 .space {
