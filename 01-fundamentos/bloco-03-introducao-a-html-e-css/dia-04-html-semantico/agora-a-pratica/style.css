@@ -48,11 +48,10 @@ h2 {
 h3 {
     margin: 15px 0;
 }
-p {
+p, table, img {
     margin: 15px;
 }
 table {
-    margin: 15px 0px;
     border: 1px solid black;
 }
 table th, table td {
