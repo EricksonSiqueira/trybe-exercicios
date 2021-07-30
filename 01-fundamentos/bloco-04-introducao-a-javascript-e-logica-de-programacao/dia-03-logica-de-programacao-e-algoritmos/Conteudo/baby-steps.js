@@ -6,4 +6,6 @@ for(let number of fruits){
 }
 if(somatorio > 15){
   console.log(somatorio)
+}else if(somatorio < 16){
+  console.log("valor menor que 16")
 }
