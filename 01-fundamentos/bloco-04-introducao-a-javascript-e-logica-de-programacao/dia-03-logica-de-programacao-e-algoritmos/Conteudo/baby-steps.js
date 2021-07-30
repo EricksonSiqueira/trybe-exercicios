@@ -4,3 +4,6 @@ let somatorio = 0
 for(let number of fruits){
   somatorio += number
 }
+if(somatorio > 15){
+  
+}
