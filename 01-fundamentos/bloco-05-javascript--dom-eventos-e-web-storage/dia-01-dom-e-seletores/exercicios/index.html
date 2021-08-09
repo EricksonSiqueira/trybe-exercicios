@@ -78,6 +78,9 @@
         let text = element.innerText
         element.innerText = text.toUpperCase()
       }
+      function printElementContentOnConsole(element){
+        console.log(element.innerText)
+      }
       changeCenterPText('Terei um bom emprego como desenvolvedor junior em uma boa empresa')
       changeMainContentBackgroundColor('rgb(76,164,109)')
       changeCenterContentBackgroundColor('#fff')
@@ -85,6 +88,7 @@
 
       for(let i = 0;i < psCenterContent.length;i += 1){
         upperCase(psCenterContent[i])
+        printElementContentOnConsole(psCenterContent[i])
       }
   </script>
 </body>
