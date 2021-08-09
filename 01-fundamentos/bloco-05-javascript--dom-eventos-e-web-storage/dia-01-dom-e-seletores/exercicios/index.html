@@ -61,12 +61,17 @@
         const pCenterContent = document.querySelector('.center-content p')
         pCenterContent.innerText = string
       }
-      function changeMainContentBackgroundColor (color){
+      function changeMainContentBackgroundColor(color){
         const mainContent = document.querySelector('.main-content')
         mainContent.style.background = color
       }
+      function changeCenterContentBackgroundColor(color) {
+        const centerContent = document.querySelector('.center-content')
+        centerContent.style.background = color
+      }
       changeCenterPText('Terei um bom emprego como desenvolvedor junior em uma boa empresa')
       changeMainContentBackgroundColor('rgb(76,164,109)')
+      changeCenterContentBackgroundColor('#fff')
   </script>
 </body>
 
