@@ -8,4 +8,3 @@ for(let i = 0;i < emergencyDivs.length; i += 1){
   emergencyH3[i].style.background = '#a51ff3'
   emergencyH3[i].style.marginTop = '0px';
 }
-emergencyH3[0].style.padding = '10px'
