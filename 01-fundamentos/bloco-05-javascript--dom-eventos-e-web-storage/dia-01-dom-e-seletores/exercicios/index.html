@@ -57,6 +57,7 @@
     Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
     Crie uma função que exiba o conteúdo de todas as tags <p> no console.
     */
+      const psCenterContent = document.querySelectorAll('.center-content p')
       function changeCenterPText(string){
         const pCenterContent = document.querySelector('.center-content p')
         pCenterContent.innerText = string
@@ -73,10 +74,18 @@
       const title = document.querySelector('.title')
       title.innerText = text
       }
+      function upperCase(element){
+        let text = element.innerText
+        element.innerText = text.toUpperCase()
+      }
       changeCenterPText('Terei um bom emprego como desenvolvedor junior em uma boa empresa')
       changeMainContentBackgroundColor('rgb(76,164,109)')
       changeCenterContentBackgroundColor('#fff')
       changeTitleH1Text('Exercício 5.1 - JavaScript')
+
+      for(let i = 0;i < psCenterContent.length;i += 1){
+        upperCase(psCenterContent[i])
+      }
   </script>
 </body>
 
