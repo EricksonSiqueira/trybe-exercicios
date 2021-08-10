@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.1</title>
+
+  <style>
+    main,
+    section {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+  </header>
+  <main class="main-content">
+    <section class="center-content">
+      <p>Texto padrão do nosso site</p>
+      <p>-----</p>
+      <p>Trybe</p>
+    </section>
+  </main>
+  <script>
+    /*
+    Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+    - document.getElementById()
+    - document.getElementsByClassName()
+    - document.getElementsByTagName()
+    Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
+    Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+    Crie uma função que mude a cor do quadrado vermelho para branco.
+    Crie uma função que corrija o texto da tag <h1>.
+    Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+    */
+      const psCenterContent = document.querySelectorAll('.center-content p')
+      function changeCenterPText(string){
+        const pCenterContent = document.querySelector('.center-content p')
+        pCenterContent.innerText = string
+      }
+      function changeMainContentBackgroundColor(color){
+        const mainContent = document.querySelector('.main-content')
+        mainContent.style.background = color
+      }
+      function changeCenterContentBackgroundColor(color) {
+        const centerContent = document.querySelector('.center-content')
+        centerContent.style.background = color
+      }
+      function changeTitleH1Text(text) {
+      const title = document.querySelector('.title')
+      title.innerText = text
+      }
+      function upperCase(element){
+        let text = element.innerText
+        element.innerText = text.toUpperCase()
+      }
+      function printElementContentOnConsole(element){
+        console.log(element.innerText)
+      }
+      changeCenterPText('Terei um bom emprego como desenvolvedor junior em uma boa empresa')
+      changeMainContentBackgroundColor('rgb(76,164,109)')
+      changeCenterContentBackgroundColor('#fff')
+      changeTitleH1Text('Exercício 5.1 - JavaScript')
+
+      for(let i = 0;i < psCenterContent.length;i += 1){
+        upperCase(psCenterContent[i])
+        printElementContentOnConsole(psCenterContent[i])
+      }
+  </script>
+</body>
+
+</html>
