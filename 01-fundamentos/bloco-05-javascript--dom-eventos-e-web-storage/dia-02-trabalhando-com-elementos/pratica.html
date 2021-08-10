@@ -67,9 +67,10 @@
       section.className = classe
       return section
     }
-    function criaH3s(quantidade, pai){
+    function criaH3s(quantidade, pai, classe){
       for(let i = 0; i < quantidade; i += 1){
         let h3 = document.createElement('h3')
+        h3.className = classe
         pai.appendChild(h3)
       }
     }
@@ -112,7 +113,7 @@
       sectionRight.appendChild(li)
     }
 
-    criaH3s(3, main)
+    criaH3s(3, main, 'description')
   </script>
 </body>
 
