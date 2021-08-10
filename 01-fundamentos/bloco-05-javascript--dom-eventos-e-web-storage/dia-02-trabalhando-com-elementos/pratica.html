@@ -65,9 +65,13 @@
 
     let title = document.createElement('h1')
     let body = document.querySelector('body')
+    let main = document.createElement('main')
 
     title.innerText = 'Exercício 5.2 - JavaScript DOM'
     adicionaElementoNoHtml(body, title)
+
+    main.className = 'main-content'
+    adicionaElementoNoHtml(body, main)
   </script>
 </body>
 
