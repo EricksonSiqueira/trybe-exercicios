@@ -76,6 +76,7 @@
     let sectionLeft = criaSectionComClasse('left-content')
     let sectionRight = criaSectionComClasse('right-content')
     let imgSmall = document.createElement('img')
+    let ulRight = document.createElement('ul')
 
     title.innerText = 'Exercício 5.2 - JavaScript DOM'
     adicionaElementoNoHtml(body, title)
@@ -95,6 +96,14 @@
     imgSmall.setAttribute('src', 'https://picsum.photos/200')
     imgSmall.classList = 'small-image'
     adicionaElementoNoHtml(sectionLeft, imgSmall)
+
+    let numeros = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+
+    for(let i = 0; i < 10; i += 1){
+      let li = document.createElement('li')
+      li.innerText = numeros[i]
+      sectionRight.appendChild(li)
+    }
   </script>
 </body>
 
