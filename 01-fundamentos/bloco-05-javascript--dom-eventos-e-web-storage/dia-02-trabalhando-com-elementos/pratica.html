@@ -75,6 +75,7 @@
     let sectionCenter = criaSectionComClasse('center-content')
     let sectionLeft = criaSectionComClasse('left-content')
     let sectionRight = criaSectionComClasse('right-content')
+    let imgSmall = document.createElement('img')
 
     title.innerText = 'Exercício 5.2 - JavaScript DOM'
     adicionaElementoNoHtml(body, title)
@@ -90,6 +91,10 @@
     adicionaElementoNoHtml(main, sectionLeft)
     
     adicionaElementoNoHtml(main, sectionRight)
+
+    imgSmall.setAttribute('src', 'https://picsum.photos/200')
+    imgSmall.classList = 'small-image'
+    adicionaElementoNoHtml(sectionLeft, imgSmall)
   </script>
 </body>
 
