@@ -59,11 +59,15 @@
 
 <body>
   <script>
+    function adicionaElementoNoHtml(pai, filho){
+      pai.appendChild(filho)
+    }
+
     let title = document.createElement('h1')
     let body = document.querySelector('body')
 
     title.innerText = 'Exercício 5.2 - JavaScript DOM'
-    body.appendChild(title)
+    adicionaElementoNoHtml(body, title)
   </script>
 </body>
 
