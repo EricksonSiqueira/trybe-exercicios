@@ -2,10 +2,7 @@ let word = 'trybe'
 let end = 'be'
 
 function checkFinal(word, end){
-  if(word.slice(-(end.length)) === end){
-    return true
-  }else{
-    return false
-  }
+  let reverseSlice = -(end.length)
+  return word.slice(reverseSlice) === end
 }
 console.log(checkFinal(word, end))
