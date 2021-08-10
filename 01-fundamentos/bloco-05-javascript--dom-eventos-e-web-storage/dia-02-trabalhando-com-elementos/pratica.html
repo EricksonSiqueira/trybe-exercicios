@@ -71,6 +71,8 @@
     let title = document.createElement('h1')
     let body = document.querySelector('body')
     let main = document.createElement('main')
+    let pCenterContent = document.createElement('p')
+    let sectionCenter = criaSectionComClasse('center-content')
 
     title.innerText = 'Exercício 5.2 - JavaScript DOM'
     adicionaElementoNoHtml(body, title)
@@ -78,7 +80,10 @@
     main.className = 'main-content'
     adicionaElementoNoHtml(body, main)
 
-    adicionaElementoNoHtml(main, criaSectionComClasse('center-content'))
+    adicionaElementoNoHtml(main, sectionCenter)
+
+    pCenterContent.innerText = 'Todos as tags desse site foram adicionadas pelo JavaScript!'
+    adicionaElementoNoHtml(sectionCenter, pCenterContent)
   </script>
 </body>
 
