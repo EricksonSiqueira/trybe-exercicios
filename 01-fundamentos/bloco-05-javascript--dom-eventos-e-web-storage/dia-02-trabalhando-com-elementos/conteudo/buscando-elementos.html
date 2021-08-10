@@ -29,8 +29,12 @@
     let atencaoPeloElementoOndeVoceEsta = elementoOndeVoceEsta.nextSibling
     let terceiroFilhoPeloElementoOndeVoceEsta = elementoOndeVoceEsta.nextElementSibling
     let terceiroFilhoPeloPai = pai.childNodes[5]
-
+    
     elementoOndeVoceEsta.parentElement.style.color = 'green'
+
+    let irmaoDoElementoOndeVoceEsta = document.createElement('section')
+    irmaoDoElementoOndeVoceEsta.innerText = 'Irmão do elementoOndeVoceEsta'
+    pai.appendChild(irmaoDoElementoOndeVoceEsta)
   </script>
 </body>
 </html>
