@@ -67,6 +67,12 @@
       section.className = classe
       return section
     }
+    function criaH3s(quantidade, pai){
+      for(let i = 0; i < quantidade; i += 1){
+        let h3 = document.createElement('h3')
+        pai.appendChild(h3)
+      }
+    }
 
     let title = document.createElement('h1')
     let body = document.querySelector('body')
@@ -104,6 +110,8 @@
       li.innerText = numeros[i]
       sectionRight.appendChild(li)
     }
+
+    criaH3s(3, main)
   </script>
 </body>
 
