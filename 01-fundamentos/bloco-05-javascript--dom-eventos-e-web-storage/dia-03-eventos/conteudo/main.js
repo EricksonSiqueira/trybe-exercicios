@@ -1,8 +1,8 @@
-const firstLi = document.getElementById('first-li');
-const secondLi = document.getElementById('second-li');
-const thirdLi = document.getElementById('third-li');
+const firstLi = document.getElementById('firstLi');
+const secondLi = document.getElementById('secondLi');
+const thirdLi = document.getElementById('thirdLi');
 const input = document.getElementById('input');
-const myWebpage = document.getElementById('my-spotrybefy');
+const myWebpage = document.getElementById('mySpotrybefy');
 
 /*
  Copie esse arquivo e edite apenas ele;
@@ -24,6 +24,9 @@ function resetText(event) {
   event.target.innerText = 'Opção reiniciada';
   // O event possui várias propriedades, porém a mais usada é o event.target,
   // que retorna o objeto que disparou o evento.
+}
+function addClassTech(event) {
+  event.target.className = 'tech'
 }
 
 firstLi.addEventListener('dblclick', resetText);
