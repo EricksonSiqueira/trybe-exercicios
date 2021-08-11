@@ -42,9 +42,13 @@ function changeTechText(key){
     input.value = ''
   }
 }
+function openPageInNewTab(url){
+  window.open('https://github.com/ericksonsiqueira')
+}
 
 firstLi.addEventListener('dblclick', resetText);
 input.addEventListener('keypress', changeTechText)
+myWebpage.addEventListener('dblclick', openPageInNewTab)
 
 
 addEventListenerToLis(techList, addClassTech)
