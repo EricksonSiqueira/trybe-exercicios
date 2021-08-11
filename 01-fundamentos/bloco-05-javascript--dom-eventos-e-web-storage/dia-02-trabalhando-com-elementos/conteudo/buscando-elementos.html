@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscando elementos</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho">Abudabi</section>
+      <section id="elementoOndeVoceEsta">
+        Alou
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    let pai = document.querySelector('#pai')
+    let elementoOndeVoceEsta = pai.children[1]
+    let primeiroFilhoDoFilho = elementoOndeVoceEsta.firstElementChild
+    let primeiroFilhoDePai = pai.firstElementChild
+    let primeiroFilhoPeloSegundo = elementoOndeVoceEsta.previousElementSibling
+    let atencaoPeloElementoOndeVoceEsta = elementoOndeVoceEsta.nextSibling
+    let terceiroFilhoPeloElementoOndeVoceEsta = elementoOndeVoceEsta.nextElementSibling
+    let terceiroFilhoPeloPai = pai.childNodes[5]
+    
+    elementoOndeVoceEsta.parentElement.style.color = 'green'
+
+    let irmaoDoElementoOndeVoceEsta = document.createElement('section')
+    irmaoDoElementoOndeVoceEsta.id = 'IrmaoDoElementoOndeVoceEsta'
+    pai.appendChild(irmaoDoElementoOndeVoceEsta)
+
+    let filhoDoElementoOndeVoceEsta = document.createElement('section')
+    filhoDoElementoOndeVoceEsta.id = 'FilhoDoElementoOndeVoceEsta'
+    elementoOndeVoceEsta.appendChild(filhoDoElementoOndeVoceEsta)
+
+    let filhoDoPrimeiroFilhoDoFilho = document.createElement('section')
+    filhoDoPrimeiroFilhoDoFilho.id = 'FilhoDoPrimeiroFilhoDoFilho'
+    primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho)
+
+    let terceiroFilhoPeloFilhoDoPrimeiroFilhoDoFilho = filhoDoPrimeiroFilhoDoFilho.parentElement.parentElement.parentElement.children[2]
+
+    let sections = document.querySelectorAll('section')
+    let elementosParaRemover = []
+    for(let i = 0;i < sections.length;i += 1){
+      let elemento = sections[i]
+
+      if(elemento.id !== 'elementoOndeVoceEsta' && elemento.id !== 'primeiroFilhoDoFilho' && elemento.id !== 'paiDoPai' && elemento.id !== 'pai'){
+        elementosParaRemover.push(elemento)
+      }
+    }
+    for(let i = 0 ; i < elementosParaRemover.length ; i += 1) {
+      let elemento = elementosParaRemover[i]
+      elemento.remove()
+    }
+  </script>
+</body>
+</html>
