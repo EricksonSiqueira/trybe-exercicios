@@ -32,7 +32,7 @@ function addClassTech(event) {
 }
 function addEventListenerToLis(array, functionName) {
   for (let element of array) {
-    element.addEventListener('mouseover', functionName)
+    element.addEventListener('click', functionName)
   }
 }
 function changeTechText(key){
