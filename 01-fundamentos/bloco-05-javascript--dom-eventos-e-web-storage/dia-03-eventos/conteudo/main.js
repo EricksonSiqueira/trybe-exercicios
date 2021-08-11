@@ -35,8 +35,16 @@ function addEventListenerToLis(array, functionName) {
     element.addEventListener('mouseover', functionName)
   }
 }
+function changeTechText(key){
+  let tech = document.querySelector('.tech')
+  if(key.code === 'Enter'){
+    tech.innerText = input.value
+    input.value = ''
+  }
+}
 
 firstLi.addEventListener('dblclick', resetText);
+input.addEventListener('keypress', changeTechText)
 
 
 addEventListenerToLis(techList, addClassTech)
