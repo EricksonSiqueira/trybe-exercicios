@@ -42,13 +42,21 @@ function changeTechText(key){
     input.value = ''
   }
 }
-function openPageInNewTab(url){
+function openPageInNewTab(){
   window.open('https://github.com/ericksonsiqueira')
+}
+function changeMyWebPageColorOver(element){
+  element.target.style.color = 'orange'
+}
+function changeMyWebPageColorLeave(element){
+  element.target.style.color = 'white'
 }
 
 firstLi.addEventListener('dblclick', resetText);
 input.addEventListener('keypress', changeTechText)
 myWebpage.addEventListener('dblclick', openPageInNewTab)
+myWebpage.addEventListener('mouseover', changeMyWebPageColorOver)
+myWebpage.addEventListener('mouseleave', changeMyWebPageColorLeave)
 
 
 addEventListenerToLis(techList, addClassTech)
