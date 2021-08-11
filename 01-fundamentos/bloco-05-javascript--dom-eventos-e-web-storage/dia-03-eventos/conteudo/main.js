@@ -18,6 +18,7 @@ a cor do mesmo;
 
 Segue abaixo um exemplo do uso de event.target:
 */
+const techList = document.getElementsByClassName('container')[0].children
 
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.
@@ -26,11 +27,19 @@ function resetText(event) {
   // que retorna o objeto que disparou o evento.
 }
 function addClassTech(event) {
+  document.querySelector('.tech').classList.remove('tech')
   event.target.className = 'tech'
+}
+function addEventListenerToLis(array, functionName) {
+  for (let element of array) {
+    element.addEventListener('mouseover', functionName)
+  }
 }
 
 firstLi.addEventListener('dblclick', resetText);
 
+
+addEventListenerToLis(techList, addClassTech)
 // Não precisa passar o parâmetro dentro da callback resetText. O próprio
 // navegador fará esse trabalho por você, não é legal? Desse jeito, o
 // event.target na nossa função retornará o objeto 'firstLi'.
