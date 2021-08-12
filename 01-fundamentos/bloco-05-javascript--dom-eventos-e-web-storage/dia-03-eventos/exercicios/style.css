@@ -86,11 +86,13 @@ label {
   margin-left: 10px;
   vertical-align: middle;
   width: 35px;
+  transition: all 1s;
 }
 
 .my-tasks div:hover {
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
+
 }
 
 .my-tasks span {
