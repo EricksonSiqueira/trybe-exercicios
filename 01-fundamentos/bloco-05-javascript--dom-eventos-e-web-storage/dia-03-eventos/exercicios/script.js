@@ -18,6 +18,8 @@ const daysList = document.querySelector('#days')
 const buttonsContainer = document.querySelector('.buttons-container')
 const buttonHolidays = createButton('Feriados', 'btn-holiday')
 const buttonFriday = createButton('Sexta-feira', 'btn-friday')
+const daysContainer = document.querySelector('.days-container')
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
 
 function checkFriday(dayText){
   let fridays = ['4', '11', '18', '25']
@@ -40,10 +42,11 @@ function checkHoliday(dayText){
   }
   return boolean
 }
-function creatDaysLi(numberOfDays){
-  for(let i = 0; i < numberOfDays; i += 1){
+function creatDaysLi(arrayWithDays){
+
+  for(let i = 0; i < arrayWithDays.length; i += 1){
     let day = document.createElement('li')
-    day.innerText = i+1
+    day.innerText = arrayWithDays[i]
     day.classList.add('day')
     
     if(checkHoliday(day.innerText)){
@@ -97,7 +100,9 @@ function changeFridayText(){
   }
 }
 
-creatDaysLi(31)
+
+
+creatDaysLi(dezDaysList)
 
 buttonsContainer.appendChild(buttonHolidays)
 
