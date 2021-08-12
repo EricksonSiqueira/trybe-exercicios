@@ -126,17 +126,15 @@ buttonFriday.addEventListener('click', changeFridayText)
 
 daysContainer.addEventListener('mouseover', function (element){
   element.target.style.fontSize = '25px'
-  element.target.style.color = 'green'
 })
 daysContainer.addEventListener('mouseout', function (element) {
   element.target.style.fontSize = '20px'
-  element.target.style.color = '#777'
 })
 
 createTask('Projeto')
 createTaskSubtitle('green')
 
-myTasks.addEventListener('click', function (e) {
+document.body.addEventListener('click', function (e) {
   let element = e.target
   if(element.classList.contains('task')){
     if (element.classList.contains('selected')){
@@ -144,5 +142,14 @@ myTasks.addEventListener('click', function (e) {
     }else{
       element.classList.add('selected')
     }
+  }
+})
+
+daysContainer.addEventListener('click', function (e) {
+  let element = e.target
+  let taskDiv = document.querySelector('.selected')
+  if (taskDiv){
+    let selectedColor = document.querySelector('.selected').style.backgroundColor
+    element.style.color = selectedColor
   }
 })
