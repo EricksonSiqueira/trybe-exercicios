@@ -20,6 +20,7 @@ const buttonHolidays = createButton('Feriados', 'btn-holiday')
 const buttonFriday = createButton('Sexta-feira', 'btn-friday')
 const daysContainer = document.querySelector('.days-container')
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+const myTasks = document.querySelector('.my-tasks')
 
 function checkFriday(dayText){
   let fridays = ['4', '11', '18', '25']
@@ -100,7 +101,11 @@ function changeFridayText(){
   }
 }
 
-
+function createTask(taskText){
+  let task = document.createElement('span')
+  task.innerText = taskText
+  myTasks.appendChild(task)
+}
 
 creatDaysLi(dezDaysList)
 
@@ -120,3 +125,5 @@ daysContainer.addEventListener('mouseout', function (element) {
   element.target.style.fontSize = '20px'
   element.target.style.color = '#777'
 })
+
+createTask('Projeto')
