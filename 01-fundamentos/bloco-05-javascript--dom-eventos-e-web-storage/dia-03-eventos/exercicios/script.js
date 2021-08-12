@@ -107,6 +107,13 @@ function createTask(taskText){
   myTasks.appendChild(task)
 }
 
+function createTaskSubtitle(color){
+  let subtitle = document.createElement('div')
+  subtitle.classList.add('task')
+  subtitle.style.backgroundColor = color
+  myTasks.appendChild(subtitle)
+}
+
 creatDaysLi(dezDaysList)
 
 buttonsContainer.appendChild(buttonHolidays)
@@ -127,3 +134,4 @@ daysContainer.addEventListener('mouseout', function (element) {
 })
 
 createTask('Projeto')
+createTaskSubtitle('green')
