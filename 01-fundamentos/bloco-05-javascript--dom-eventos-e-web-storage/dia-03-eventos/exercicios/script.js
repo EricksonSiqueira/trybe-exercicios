@@ -151,5 +151,7 @@ daysContainer.addEventListener('click', function (e) {
   if (taskDiv){
     let selectedColor = document.querySelector('.selected').style.backgroundColor
     element.style.color = selectedColor
+  }else{
+    element.style.color = 'rgb(119, 119, 119)'
   }
 })
