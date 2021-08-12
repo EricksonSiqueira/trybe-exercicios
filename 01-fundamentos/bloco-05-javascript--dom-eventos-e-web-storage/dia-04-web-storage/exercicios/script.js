@@ -4,15 +4,12 @@ let body = document.body
 
 colorsOptions.addEventListener('click', function(e) {
   let element = e.target
-  if(element.classList.contains('green')){
-    body.style.backgroundColor = 'green'
-    localStorage.setItem('bgcolor', 'green')
-  } else if (element.classList.contains('blue')){
-    body.style.backgroundColor = 'blue'
-    localStorage.setItem('bgcolor', 'blue')
-  } else if (element.classList.contains('red')){
-    body.style.backgroundColor = 'red'
-    localStorage.setItem('bgcolor', 'red')
+  let colors = ['green', 'blue', 'red']
+  for(color of colors){
+    if(element.classList.contains(color)){
+      body.style.backgroundColor = color
+      localStorage.setItem('bgcolor', color)
+    }
   }
 })
 
