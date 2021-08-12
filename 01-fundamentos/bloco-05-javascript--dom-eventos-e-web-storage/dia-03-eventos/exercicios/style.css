@@ -158,3 +158,6 @@ label {
 .day {
   min-height: 30px;
 }
+div .selected {
+  border: 2px solid red;
+}
