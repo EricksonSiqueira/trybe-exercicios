@@ -15,6 +15,8 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 const daysList = document.querySelector('#days')
+const buttonsContainer = document.querySelector('.buttons-container')
+const buttonHolidays = createButton('Feriados', 'btn-holiday')
 
 function checkFriday(dayText){
   let fridays = ['4', '11', '18', '25']
@@ -54,4 +56,13 @@ function creatDaysLi(numberOfDays){
 
 }
 
+function createButton(buttonText, buttonId){
+  let button = document.createElement('button')
+  button.innerText = buttonText
+  button.id = buttonId
+  return button
+}
+
 creatDaysLi(31)
+
+buttonsContainer.appendChild(buttonHolidays)
