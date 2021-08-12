@@ -111,3 +111,10 @@ buttonHolidays.addEventListener('click', changeHolidaysBackgroundColor)
 buttonsContainer.appendChild(buttonFriday)
 
 buttonFriday.addEventListener('click', changeFridayText)
+
+daysContainer.addEventListener('mouseover', function (element){
+  element.target.style.fontSize = '25px'
+})
+daysContainer.addEventListener('mouseout', function (element) {
+  element.target.style.fontSize = '20px'
+})
