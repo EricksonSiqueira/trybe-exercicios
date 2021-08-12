@@ -114,7 +114,9 @@ buttonFriday.addEventListener('click', changeFridayText)
 
 daysContainer.addEventListener('mouseover', function (element){
   element.target.style.fontSize = '25px'
+  element.target.style.color = 'green'
 })
 daysContainer.addEventListener('mouseout', function (element) {
   element.target.style.fontSize = '20px'
+  element.target.style.color = '#777'
 })
