@@ -44,13 +44,13 @@ function creatDaysLi(numberOfDays){
   for(let i = 0; i < numberOfDays; i += 1){
     let day = document.createElement('li')
     day.innerText = i+1
-    day.classList.add('day', 'normal')
+    day.classList.add('day')
     
     if(checkHoliday(day.innerText)){
-      day.classList.add('holiday')
+      day.classList.add('holiday', 'normal')
     }
     if(checkFriday(day.innerText)){
-      day.classList.add('friday')
+      day.classList.add('friday', 'standard')
     }
     daysList.appendChild(day)
   }
@@ -80,6 +80,23 @@ function changeHolidaysBackgroundColor(){
   }
 }
 
+function changeFridayText(){
+  let fridays = document.getElementsByClassName('friday')
+  let fridaysValue = ['4', '11', '18', '25']
+
+  for(let i = 0; i < fridays.length; i += 1){
+    if(fridays[i].classList.contains('standard')){
+      fridays[i].innerText = 'sextou!'
+      fridays[i].classList.remove('standard')
+      fridays[i].classList.add('modified')
+    }else{
+      fridays[i].innerText = fridaysValue[i]
+      fridays[i].classList.remove('modified')
+      fridays[i].classList.add('standard')
+    }
+  }
+}
+
 creatDaysLi(31)
 
 buttonsContainer.appendChild(buttonHolidays)
@@ -87,3 +104,5 @@ buttonsContainer.appendChild(buttonHolidays)
 buttonHolidays.addEventListener('click', changeHolidaysBackgroundColor)
 
 buttonsContainer.appendChild(buttonFriday)
+
+buttonFriday.addEventListener('click', changeFridayText)
