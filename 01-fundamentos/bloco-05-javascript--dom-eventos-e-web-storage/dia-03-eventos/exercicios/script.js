@@ -135,3 +135,14 @@ daysContainer.addEventListener('mouseout', function (element) {
 
 createTask('Projeto')
 createTaskSubtitle('green')
+
+myTasks.addEventListener('click', function (e) {
+  let element = e.target
+  if(element.classList.contains('task')){
+    if (element.classList.contains('selected')){
+      element.classList.remove('selected')
+    }else{
+      element.classList.add('selected')
+    }
+  }
+})
