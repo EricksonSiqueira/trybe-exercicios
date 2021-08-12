@@ -43,7 +43,7 @@ function creatDaysLi(numberOfDays){
   for(let i = 0; i < numberOfDays; i += 1){
     let day = document.createElement('li')
     day.innerText = i+1
-    day.classList.add('day')
+    day.classList.add('day', 'normal')
     
     if(checkHoliday(day.innerText)){
       day.classList.add('holiday')
@@ -63,6 +63,24 @@ function createButton(buttonText, buttonId){
   return button
 }
 
+function changeHolidaysBackgroundColor(){
+  let holidays = document.getElementsByClassName('holiday')
+
+  for(element of holidays){
+    if(element.classList.contains('normal')){
+      element.style.background = '#EF9A81'
+      element.classList.remove('normal')
+      element.classList.add('colored')
+    }else{
+      element.style.background = 'rgb(238,238,238)'
+      element.classList.remove('colored')
+      element.classList.add('normal')
+    }
+  }
+}
+
 creatDaysLi(31)
 
 buttonsContainer.appendChild(buttonHolidays)
+
+buttonHolidays.addEventListener('click', changeHolidaysBackgroundColor)
