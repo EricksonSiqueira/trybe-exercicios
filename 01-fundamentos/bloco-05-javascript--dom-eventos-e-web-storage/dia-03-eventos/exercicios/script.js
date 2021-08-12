@@ -17,6 +17,7 @@ createDaysOfTheWeek();
 const daysList = document.querySelector('#days')
 const buttonsContainer = document.querySelector('.buttons-container')
 const buttonHolidays = createButton('Feriados', 'btn-holiday')
+const buttonFriday = createButton('Sexta-feira', 'btn-friday')
 
 function checkFriday(dayText){
   let fridays = ['4', '11', '18', '25']
@@ -84,3 +85,5 @@ creatDaysLi(31)
 buttonsContainer.appendChild(buttonHolidays)
 
 buttonHolidays.addEventListener('click', changeHolidaysBackgroundColor)
+
+buttonsContainer.appendChild(buttonFriday)
