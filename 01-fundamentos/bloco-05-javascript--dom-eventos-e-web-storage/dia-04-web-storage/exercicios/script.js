@@ -40,13 +40,13 @@ fontSizeOptions.addEventListener('click',function (e){
 })
 lineSpacingOptions.addEventListener('click', function (e) {
   let element = e.target
-  let fontSizes = [18, 25]
+  let lineHeights = [18, 25]
   let fontClasses = ['medium', 'big']
 
-  for (let i = 0; i < fontSizes.length; i += 1) {
+  for (let i = 0; i < lineHeights.length; i += 1) {
     if (element.classList.contains(fontClasses[i])) {
-      body.style.lineHeight = fontSizes[i] + 'px'
-      localStorage.setItem('fontSize', fontSizes[i])
+      body.style.lineHeight = lineHeights[i] + 'px'
+      localStorage.setItem('lineHeight', lineHeights[i])
     }
   }
 
@@ -68,8 +68,14 @@ fontFamilyOptions.addEventListener('click', function (e) {
 function pagePreSets(){
   let backgroundColor = localStorage.getItem('bgcolor')
   let textColor = localStorage.getItem('textColor')
+  let fontSize = localStorage.getItem('fontSize')
+  let lineHeight = localStorage.getItem('lineHeight')
+  let fontFamily = localStorage.getItem('fontFamily')
 
   body.style.backgroundColor = backgroundColor
   body.style.color = textColor
+  body.style.fontSize = fontSize + 'px'
+  body.style.lineHeight = lineHeight + 'px'
+  body.style.fontFamily = fontFamily
 }
 pagePreSets()
