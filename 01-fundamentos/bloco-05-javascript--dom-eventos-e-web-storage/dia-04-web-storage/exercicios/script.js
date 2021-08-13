@@ -2,6 +2,7 @@ let colorsOptions = document.querySelector('.bg-colors')
 let textColorOptions = document.querySelector('.text-colors')
 let fontSizeOptions = document.querySelector('.font-size')
 let lineSpacingOptions = document.querySelector('.line-spacing ')
+let fontFamilyOptions = document.querySelector('.font-family ')
 let body = document.body
 
 colorsOptions.addEventListener('click', function(e) {
@@ -46,6 +47,19 @@ lineSpacingOptions.addEventListener('click', function (e) {
     if (element.classList.contains(fontClasses[i])) {
       body.style.lineHeight = fontSizes[i] + 'px'
       localStorage.setItem('fontSize', fontSizes[i])
+    }
+  }
+
+})
+fontFamilyOptions.addEventListener('click', function (e) {
+  let element = e.target
+  let fontFamilys = ['monospace', 'Arial']
+  let fontClasses = ['monospace', 'arial']
+
+  for (let i = 0; i < fontFamilys.length; i += 1) {
+    if (element.classList.contains(fontClasses[i])) {
+      body.style.fontFamily= fontFamilys[i]
+      localStorage.setItem('fontFamily', fontFamilys[i])
     }
   }
 
