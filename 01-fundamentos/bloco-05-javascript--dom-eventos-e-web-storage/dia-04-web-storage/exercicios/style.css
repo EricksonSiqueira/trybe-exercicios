@@ -1,4 +1,7 @@
-.text-colors , .bg-colors{
+.option{
   display: inline-block;
   margin-left: 20px;
+}
+.option-li:hover{
+  cursor: pointer;
 }
