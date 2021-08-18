@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário currículo</title>
 </head>
+
 <body>
   <main>
     <form action="" method="GET">
-      <fieldset>
-        <label for="name">
-          Nome:
-          <input type="text" max="40" id="name" required>
-        </label>
+      <fieldset id="data">
+        <section id="info">
+          <label for="name">
+            Nome:
+            <input type="text" max="40" id="name" required>
+          </label>
+          <br>
+          <label for="email-input">
+            Email:
+            <input type="email" max="50" id="email-input" required>
+          </label>
+          <br>
+          <label for="cpf-input">
+            CPF:
+            <input type="number" max="11" id="cpf-input" required>
+          </label>
+        </section>
         <br>
-        <label for="email-input">
-          Email:
-          <input type="email" max="50" id="email-input" required>
-        </label>
+        <section id="adress">
+          <label for="adress-input">
+            Endereço:
+            <input type="text" max="200" id="adress-input" required>
+          </label>
+          <label for="city-input">
+            Cidade:
+            <input type="text" max="28" id="city-input" required>
+          </label>
+          <label for="states">
+            Estado:
+            <select name="estados" id="states" required>
+              <option value=""></option>
+            </select>
+          </label>
+        </section>
         <br>
-        <label for="cpf-input">
-          CPF:
-          <input type="number" max="11" id="cpf-input" required>
+        <section id="home-type">
+          <label for="home-1">
+            Casa
+            <input type="radio" name="home" id="home-1" checked required>
+          </label>
+          <label for="home-2">
+            Apartamento
+            <input type="radio" name="home" id="home-2" required>
+          </label>
+        </section>
+      </fieldset>
+      <fieldset id="history">
+        <label for="curriculum-resume">
+          Resumo do currículo:
+          <br>
+          <textarea name="curriculum-resume" id="curriculum-resume" cols="30" rows="10" max="1000" required></textarea>
         </label>
-        <br>
-        <label for="adress-input">
-          Endereço:
-          <input type="text" max="200" id="adress-input" required>
-        </label>
-        <label for="city-input">
-          Cidade:
-          <input type="text" max="28" id="city-input" required>
-        </label>
-        <label for="states">
-          Estado:
-        <select name="estados" id="states" required>
-          <option value=""></option>
-        </select>
-        </label>
-        
-        
       </fieldset>
     </form>
   </main>
   <script src="script.js"></script>
 </body>
+
 </html>
