@@ -1,4 +1,5 @@
 const states = document.getElementById('states')
+const submitButton = document.getElementById('submit')
 
 function creatStateOptions() {
   const statesArray = ['Acre', 'ac', 'Alagoas', 'al', 'Amapá', 'ap', 'Amazonas', 'am', 'Bahia', 'ba', 'Ceará', 'ce', 'Espírito Santo', 'es', 'Goiás', 'go', 'Maranhão', 'ma', 'Mato Grosso', 'mt', 'Mato Grosso do Sul', 'ms', 'Minas Gerais', 'mg', 'Pará', 'pa', 'Paraíba', 'pb', 'Paraná', 'pr', 'Pernambuco', 'pe', 'Piauí', 'pi', 'Rio de Janeiro', 'rj', 'Rio Grande do Norte', 'rn', 'Rio Grande do Sul', 'rs', 'Rondônia', 'ro', 'Roraima', 'rr', 'Santa Catarina', 'sc', 'São Paulo', 'sp', 'Sergipe', 'se', 'Tocantins', 'to', 'Distrito Federal', 'df']
@@ -49,4 +50,10 @@ function verifyDate(){
    window.alert('Tem algo errado com a data. Verifique se esta no estilo dd/mm/aaaa (dia, mês e ano)') 
   }
 }
+
+submitButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  
+})
+
 creatStateOptions()
