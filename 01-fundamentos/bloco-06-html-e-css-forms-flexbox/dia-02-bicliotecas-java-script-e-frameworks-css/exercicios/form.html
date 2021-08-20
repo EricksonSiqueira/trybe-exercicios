@@ -27,43 +27,64 @@
             </label>
             <input type="text" class="form-control" id="name-input" required>
           </div>
-
           <div class="mb-3">
-            <label for="email-input" class="form-label">
-              Email
-              <input type="email" class="form-control" id="email-input" required>
-            </label>
-            <label for="cpf-input" class="form-label" class="form-label">
-              CPF
-              <input type="text" class="form-control" id="cpf-input" required>
-            </label>
+            <div class="row justify-content-start">
+              <div class="col-8">
+                <label for="email-input" class="form-label">
+                  Email
+                </label>
+                <input type="email" class="form-control" id="email-input" required>
+              </div>
+              <div class="col-4">
+                <label for="cpf-input" class="form-label" class="form-label">
+                  CPF
+                </label>
+                <input type="text" class="form-control" id="cpf-input" required>
+              </div>
+            </div>
           </div>
         </section>
         <section id="adress" class="form-control mb-3">
-            <label for="adress-input" class="form-label">
-              Endereço:
+          <div class="row justify-content-start">
+            <div class="col-5">
+              <label for="adress-input" class="form-label">
+                Endereço:
+              </label>
               <input type="text" max="200" class="form-control" id="adress-input" required>
-            </label>
-            <label for="city-input" class="form-label">
-              Cidade:
+            </div>
+            <div class="col-4">
+              <label for="city-input" class="form-label">
+                Cidade:
+              </label>
               <input type="text" max="28" class="form-control" id="city-input" required>
-            </label>
-            <label for="states" class="form-label">
-              Estado:
+            </div>
+            <div class="col-3">
+              <label for="states" class="form-label">
+                Estado:
+              </label>
               <select name="estados" class="form-select" id="states" required>
               </select>
-            </label>
+            </div>
+          </div>
         </section>
         <section id="home-type">
-          <label for="home-1">
-            Casa
-            <input type="radio" name="home" id="home-1" checked required>
-          </label>
-          <label for="home-2">
-            Apartamento
-            <input type="radio" name="home" id="home-2" required>
-          </label>
+          <div class="input-group">
+            <span class="input-group-text">Tipo de casa</span>
+            <div>
+              <div class="form-control">
+                <label for="home-1" class="form-check-label">
+                  Casa
+                  <input type="radio" name="home" class="form-check-input" id="home-1" checked required>
+                </label>
+                <label for="home-2" class="form-check-label mx-4">
+                  Apartamento
+                  <input type="radio" name="home" class="form-check-input" id="home-2" required>
+                </label>
+              </div>
+            </div>
+          </div>
         </section>
+        <br>
         <label for="curriculum-resume">
           Resumo do currículo:
           <textarea name="curriculum-resume" id="curriculum-resume" cols="30" rows="10" maxlength="1000"
