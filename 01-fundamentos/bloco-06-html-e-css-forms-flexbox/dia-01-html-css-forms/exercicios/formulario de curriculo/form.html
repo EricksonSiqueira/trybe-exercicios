@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário currículo</title>
+</head>
+
+<body>
+  <main>
+    <form action="" method="GET">
+      <fieldset id="data">
+        <section id="info">
+          <label for="name">
+            Nome:
+            <input type="text" id="name-input" required>
+          </label>
+          <br>
+          <label for="email-input">
+            Email:
+            <input type="email" id="email-input" required>
+          </label>
+          <br>
+          <label for="cpf-input">
+            CPF:
+            <input type="text" id="cpf-input" value="12345678909"required>
+          </label>
+        </section>
+        <br>
+        <section id="adress">
+          <label for="adress-input">
+            Endereço:
+            <input type="text" max="200" id="adress-input" required>
+          </label>
+          <label for="city-input">
+            Cidade:
+            <input type="text" max="28" id="city-input" required>
+          </label>
+          <label for="states">
+            Estado:
+            <select name="estados" id="states" required>
+              <option value=""></option>
+            </select>
+          </label>
+        </section>
+        <br>
+        <section id="home-type">
+          <label for="home-1">
+            Casa
+            <input type="radio" name="home" id="home-1" checked required>
+          </label>
+          <label for="home-2">
+            Apartamento
+            <input type="radio" name="home" id="home-2" required>
+          </label>
+        </section>
+      </fieldset>
+      <fieldset id="history">
+        <label for="curriculum-resume">
+          Resumo do currículo:
+          <br>
+          <textarea name="curriculum-resume" id="curriculum-resume" cols="30" rows="10" maxlength="1000" required></textarea>
+        </label>
+        <br>
+        <label for="role">
+          Cargo
+          <input type="text" id="role" maxlength="40" required>
+        </label>
+        <br>
+        <label for="role-resume">
+          Resumo do cargo:
+          <br>
+          <textarea name="role-resume" id="role-resume" cols="30" rows="10" maxlength="500" required></textarea>
+        </label>
+        <br>
+        <label for="start-date">
+          Data de início:
+          <input type="text" name="start-date" id="start-date" placeholder="dd/mm/aaaa"maxlength="10">
+        </label>
+      </fieldset>
+      <button id="submit" type="submit">Enviar</button>
+      <button id="clear" type="button">Limpar</button>
+      <button id="teste">Teste</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
