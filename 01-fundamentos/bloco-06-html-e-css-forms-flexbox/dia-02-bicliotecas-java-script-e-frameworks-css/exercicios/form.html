@@ -21,9 +21,9 @@
             automático.</em></p>
       </header>
       <form action="" method="GET">
-        <section id="info">
+        <section id="info" class="form-control mb-3">
           <div class="mb-3">
-            <label for="name" class="form-label">Nome
+            <label for="name" class="form-label">Nome completo
             </label>
             <input type="text" class="form-control" id="name-input" required>
           </div>
@@ -31,18 +31,15 @@
           <div class="mb-3">
             <label for="email-input" class="form-label">
               Email
+              <input type="email" class="form-control" id="email-input" required>
             </label>
-            <input type="email" class="form-control" id="email-input" required>
-          </div>
-          <div class="mb-3">
             <label for="cpf-input" class="form-label" class="form-label">
               CPF
+              <input type="text" class="form-control" id="cpf-input" required>
             </label>
-            <input type="text" class="form-control" id="cpf-input" required>
           </div>
         </section>
-        <section id="adress">
-          <div class="form-control mb-3">
+        <section id="adress" class="form-control mb-3">
             <label for="adress-input" class="form-label">
               Endereço:
               <input type="text" max="200" class="form-control" id="adress-input" required>
@@ -56,7 +53,6 @@
               <select name="estados" class="form-select" id="states" required>
               </select>
             </label>
-          </div>
         </section>
         <section id="home-type">
           <label for="home-1">
