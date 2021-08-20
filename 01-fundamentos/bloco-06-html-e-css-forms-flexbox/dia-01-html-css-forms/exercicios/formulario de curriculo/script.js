@@ -70,7 +70,6 @@ function validateCpfDigit (cpf, multiplicator) {
   if (validationDigit === 10 || validationDigit === 11) {
     validationDigit = 0
   }
-  console.log(validationDigit,parseInt(cpf.slice(9, 10)))
 
   return validationDigit
 }
@@ -87,12 +86,7 @@ function validateCPF (cpf) {
   }else {
     boolean = false
   }
-  
-  
-  console.log('primeiro', firstValidationDigit, 'sliced', parseInt(cpf.slice(9, 10)))
-  console.log('segundo', secondValidationDigit, 'sliced', parseInt(cpf.slice(10, 11)))
-  console.log(boolean)
-  return boolean
+
 }
 
 submitButton.addEventListener('click', (event) => {
