@@ -68,7 +68,7 @@
           </div>
         </section>
         <section id="home-type">
-          <div class="input-group">
+          <div class="input-group mb-3">
             <span class="input-group-text">Tipo de casa</span>
             <div>
               <div class="form-control">
@@ -84,25 +84,35 @@
             </div>
           </div>
         </section>
-        <br>
-        <label for="curriculum-resume">
-          Resumo do currículo:
-          <textarea name="curriculum-resume" id="curriculum-resume" cols="30" rows="10" maxlength="1000"
+        <section id="curriculum-resume" class="form-control mb-3">
+          <label for="curriculum-resume" class="form-label">
+            Resumo do currículo:
+          </label>
+          <textarea name="curriculum-resume" class="form-control" id="curriculum-resume" cols="30" rows="10" maxlength="1000"
             required></textarea>
-        </label>
-        <label for="role">
-          Cargo
-          <input type="text" id="role" maxlength="40" required>
-        </label>
-        <label for="role-resume">
-          Resumo do cargo:
-
-          <textarea name="role-resume" id="role-resume" cols="30" rows="10" maxlength="500" required></textarea>
-        </label>
-        <label for="start-date">
-          Data de início:
-          <input type="text" name="start-date" id="start-date" placeholder="dd/mm/aaaa" maxlength="10">
-        </label>
+        </section>
+        <section id="role-info" class="form-control">
+          <div class="row justify-content-start mb-3">
+            <div class="col-6">
+              <label for="role" class="form-label">
+                Cargo
+              </label>
+              <input type="text" class="form-control" id="role" maxlength="40" required>
+            </div>
+            <div class="col-6">
+              <label for="start-date" class="form-label">
+                Data de início:
+              </label>
+              <input type="text" name="start-date" class="form-control" id="start-date" placeholder="dd/mm/aaaa" maxlength="10">
+            </div>
+          </div>
+          <label for="role-resume" class="form-label">
+            Resumo do cargo
+  
+          </label>
+          <textarea name="role-resume" class="form-control" id="role-resume" cols="30" rows="10" maxlength="500" required></textarea>
+         
+        </section>
 
         <button id="submit" type="submit">Enviar</button>
         <button id="clear" type="button">Limpar</button>
