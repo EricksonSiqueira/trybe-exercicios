@@ -42,3 +42,10 @@ body {
   flex-basis: 268px;
   order: -1;
 }
+
+@media screen and (min-width: 768px) {
+  
+  .menu-container {
+    flex-basis: 1500px;
+}
+}
