@@ -36,12 +36,14 @@ body {
   font-size: 1.3rem;
   list-style: none;
   margin-right: 10px;
+  align-self: center;
 }
 
 .logo-container {
   flex-basis: 268px;
   order: -1;
 }
+
 /* 
 @media screen and (min-width: 768px) {
   
