@@ -25,7 +25,7 @@
           <div class="mb-3">
             <label for="name" class="form-label">Nome completo
             </label>
-            <input type="text" class="form-control" id="name-input" required>
+            <input type="text" class="form-control" id="name-input" placeholder="ex: João Barcelos Almeida" required>
           </div>
           <div class="mb-3">
             <div class="row justify-content-start">
@@ -33,7 +33,7 @@
                 <label for="email-input" class="form-label">
                   Email
                 </label>
-                <input type="email" class="form-control" id="email-input" required>
+                <input type="email" class="form-control" id="email-input" placeholder="ex: exemplo@exemplo.com" required>
               </div>
               <div class="col-4">
                 <label for="cpf-input" class="form-label" class="form-label">
@@ -50,13 +50,13 @@
               <label for="adress-input" class="form-label">
                 Endereço:
               </label>
-              <input type="text" max="200" class="form-control" id="adress-input" required>
+              <input type="text" max="200" class="form-control" id="adress-input" placeholder="ex: Figueira, Rua Emilio, número 123" required>
             </div>
             <div class="col-4">
               <label for="city-input" class="form-label">
                 Cidade:
               </label>
-              <input type="text" max="28" class="form-control" id="city-input" required>
+              <input type="text" max="28" class="form-control" id="city-input" placeholder="ex: Rio de Janeiro" required>
             </div>
             <div class="col-3">
               <label for="states" class="form-label">
@@ -88,7 +88,7 @@
           <label for="curriculum-resume" class="form-label">
             Resumo do currículo:
           </label>
-          <textarea name="curriculum-resume" class="form-control" id="curriculum-resume" cols="30" rows="10" maxlength="1000"
+          <textarea name="curriculum-resume" class="form-control" id="curriculum-resume" cols="30" rows="10" maxlength="1000" placeholder="Resumo do seu curriculo aqui"
             required></textarea>
         </section>
         <section id="role-info" class="form-control">
@@ -97,7 +97,7 @@
               <label for="role" class="form-label">
                 Cargo
               </label>
-              <input type="text" class="form-control" id="role" maxlength="40" required>
+              <input type="text" class="form-control" id="role" maxlength="40" placeholder="Desenvolvedor web Junior" required>
             </div>
             <div class="col-6">
               <label for="start-date" class="form-label">
@@ -110,13 +110,12 @@
             Resumo do cargo
   
           </label>
-          <textarea name="role-resume" class="form-control" id="role-resume" cols="30" rows="10" maxlength="500" required></textarea>
+          <textarea name="role-resume" class="form-control" id="role-resume" cols="30" rows="10" maxlength="500" placeholder="Resumo do seu cargo aqui." required></textarea>
          
         </section>
 
         <button class="btn btn-outline-success" id="submit" type="submit">Enviar</button>
         <button class="btn btn-outline-danger" id="clear" type="button">Limpar</button>
-        <button id="teste">Teste</button>
       </form>
     </div>
   </main>
