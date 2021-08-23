@@ -58,13 +58,19 @@ submitButton.addEventListener('click', (event) => {
   event.preventDefault()
   const nameInput = document.getElementById('name-input')
   const emailInput = document.getElementById('email-input')
-  const cpfInput = document.getElementById('cpf-input').value
+  let cpfInput = document.getElementById('cpf-input')
+  let cpfvalue = cpfInput.value
+
+  for(let i = 0; i < 2; i += 1){
+    cpfvalue = cpfvalue.replace('.', '')
+  }
+  cpfvalue = cpfvalue.replace('-', '')
+
   let validationBooleans = []
-  
-  // validationBooleans.push(verifyLength(nameInput, 40))
-  // validationBooleans.push(verifyLength(emailInput, 50))
-  // validationBooleans.push(verifyLength(emailInput, 11))
-  if (!validateCPF(cpfInput)){
+   validationBooleans.push(verifyLength(nameInput, 40))
+   validationBooleans.push(verifyLength(emailInput, 50))
+   validationBooleans.push(verifyLength(emailInput, 11))
+  if (!validateCPF(cpfvalue)){
     window.alert('CPF inválido.')
     cpfInput.value = ''
   }else{
