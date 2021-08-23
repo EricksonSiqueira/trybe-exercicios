@@ -51,7 +51,7 @@ function validateCPF (cpf) {
   }else {
     boolean = false
   }
-
+  return boolean
 }
 
 submitButton.addEventListener('click', (event) => {
