@@ -15,3 +15,19 @@ h1 {
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 850px) {
+  body {
+    background-color: darkgrey;
+    margin: 0 50px;
+  }
+  #chapter-info-container {
+    display: flex;
+    justify-content: center;
+  }
+  header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
