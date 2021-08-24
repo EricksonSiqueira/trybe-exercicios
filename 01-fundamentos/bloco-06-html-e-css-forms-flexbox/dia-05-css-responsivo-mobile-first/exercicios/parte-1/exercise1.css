@@ -4,9 +4,6 @@ body {
 h1 {
   font-size: 35px;
 }
-h2 {
-
-}
 
 img {
     max-width: 100%;
@@ -14,4 +11,23 @@ img {
 
 figure {
     margin: 50px 0px;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-color: aquamarine;
+    font-size: 18px;
+    margin: 0 30px;
+  }
+  header, h2{
+    text-align: center;
+  }
+  main div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  figure {
+    width: 45%;
+  }
 }
