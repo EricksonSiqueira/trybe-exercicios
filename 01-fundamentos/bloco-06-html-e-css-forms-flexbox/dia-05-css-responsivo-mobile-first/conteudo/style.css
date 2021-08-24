@@ -89,3 +89,10 @@ p strong {
   }
 }
 
+@media screen and (max-width: 500px) {
+  body > p {
+    color: rgb(12, 12, 12) !important;
+    text-transform: uppercase;
+  }
+
+}
