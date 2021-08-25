@@ -103,10 +103,24 @@
 
 @media screen and (min-width: 360px) {
   body {
-    background-color: red;
     padding: 0;
   }
   #aside {
     display: none;
   }
+
+  #content {
+    float: none;
+    width: 100%;
+  }
+
+  #content-container {
+    width: 90%;
+    margin: 0 15px;
+  }
+
+  #content img {
+    width: 100%;
+  }
+
 }
