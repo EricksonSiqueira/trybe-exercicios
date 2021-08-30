@@ -20,3 +20,7 @@ const lesson3 = {
 
 const addProperty = (object, key, value) => object[key] = value;
 addProperty(lesson2, 'turno', 'manhã');
+
+const listKeys = object => Object.keys(object);
+const objLength = object => listKeys(object).length;
+console.log(objLength(lesson2))
