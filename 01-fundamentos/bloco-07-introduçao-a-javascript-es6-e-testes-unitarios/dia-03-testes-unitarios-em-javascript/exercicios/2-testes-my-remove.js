@@ -11,3 +11,4 @@ const myRemove = (array ,item) => {
 
 assert.strictEqual(typeof myRemove, 'function');
 assert.deepStrictEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 4], 'Não retornou [1, 2, 4]');
+assert.notDeepStrictEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 3, 4]);
