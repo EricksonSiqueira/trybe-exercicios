@@ -38,3 +38,15 @@ const totalStudents = () => {
   return cont;
 }
 const getValueByNumber = (object, value) => listValues(object)[value];
+const verifyPair = (object, key, value) => {
+  let bool = false;
+  if(listKeys(object).includes(key) && object[key] === value){
+    bool = true;
+  }
+  return bool;
+}
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false
