@@ -46,6 +46,18 @@ const verifyPair = (object, key, value) => {
   return bool;
 }
 
+const studentsWatchingMath = () => {
+  const values = listValues(allLessons);
+  let cont = 0;
+  for(let i = 0; i < values.length; i += 1){
+    if (listValues(values[i]).includes('Matemática')){
+      const numeroEstudantes = values[i]['numeroEstudantes'];
+      cont += numeroEstudantes;
+    }
+  }
+  return cont;
+}
+console.log(studentsWatchingMath())
 const createReport = (object, teacher) => {
   const keys = listKeys(object);
   const obj = {
@@ -64,4 +76,3 @@ const createReport = (object, teacher) => {
   }
   return obj;
 }
-console.log(createReport(allLessons, 'Maria Clara'));
