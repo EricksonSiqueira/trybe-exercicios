@@ -37,3 +37,4 @@ const totalStudents = () => {
   }
   return cont;
 }
+const getValueByNumber = (object, value) => listValues(object)[value];
