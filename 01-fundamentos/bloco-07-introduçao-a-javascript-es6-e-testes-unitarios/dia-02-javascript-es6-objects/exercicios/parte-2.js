@@ -46,7 +46,22 @@ const verifyPair = (object, key, value) => {
   return bool;
 }
 
-console.log(verifyPair(lesson3, 'turno', 'noite'));
-// Output: true,
-console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
-// Output: false
+const createReport = (object, teacher) => {
+  const keys = listKeys(object);
+  const obj = {
+    profesor: teacher,
+    aulas: [],
+    estudantes:  0,
+  };
+  for(let i = 1; i <= keys.length; i += 1){
+    if(listValues(object[`lesson${i}`]).includes(teacher)){
+      const materia = object[`lesson${i}`]['materia']
+      const numeroEstudantes = object[`lesson${i}`]['numeroEstudantes'];
+
+      obj.aulas.push(materia);
+      obj.estudantes += numeroEstudantes;
+    }
+  }
+  return obj;
+}
+console.log(createReport(allLessons, 'Maria Clara'));
