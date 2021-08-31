@@ -29,4 +29,11 @@ const allLessons = {
   lesson2: Object.assign({}, lesson2),
   lesson3: Object.assign({}, lesson3),
 }
-
+const totalStudents = () => {
+  const lessons = Object.values(allLessons);
+  let cont = 0;
+  for(let i = 0; i < lessons.length; i += 1){
+    cont += lessons[i].numeroEstudantes;
+  }
+  return cont;
+}
