@@ -24,4 +24,9 @@ addProperty(lesson2, 'turno', 'manhã');
 const listKeys = object => Object.keys(object);
 const objLength = object => listKeys(object).length;
 const listValues = object => Object.values(object);
-console.log(listValues(lesson1));
+const allLessons = {
+  lesson1: Object.assign({}, lesson1),
+  lesson2: Object.assign({}, lesson2),
+  lesson3: Object.assign({}, lesson3),
+}
+
