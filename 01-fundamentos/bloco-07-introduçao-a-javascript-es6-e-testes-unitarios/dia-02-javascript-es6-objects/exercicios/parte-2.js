@@ -23,4 +23,5 @@ addProperty(lesson2, 'turno', 'manhã');
 
 const listKeys = object => Object.keys(object);
 const objLength = object => listKeys(object).length;
-console.log(objLength(lesson2))
+const listValues = object => Object.values(object);
+console.log(listValues(lesson1));
