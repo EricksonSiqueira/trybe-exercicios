@@ -26,7 +26,7 @@ const dragonDamage = (maxDmg) => generateRandomNumber(maxDmg, 15);
 
 const warriorDamage = (minDmg, maxDmg) => generateRandomNumber((minDmg * maxDmg), minDmg);
 
-const mageAtack = (mana, intelligence) => {
+const mageDamage = (mana, intelligence) => {
   const stats = {
     manaSpent: 0,
     damage: "Not enough mana",
@@ -40,4 +40,30 @@ const mageAtack = (mana, intelligence) => {
   return stats;
 };
 
-console.log(mageAtack(mage.mana, mage.intelligence));
+//Parte 2
+const gameActions = {
+  // Crie as HOFs neste objeto.
+  warriorAtack: function (warriorDamageFunc) {
+    const warriorDmg = warriorDamageFunc(warrior.strength, warrior.weaponDmg);
+    dragon.healthPoints -= warriorDmg;
+    warrior.damage = warriorDmg;
+  },
+  mageAtack: function (mageDamageFunc) {
+    const mageDmg = mageDamageFunc(mage.mana, mage.intelligence);
+    dragon.healthPoints -= mageDmg.damage;
+    mage.damage = mageDmg.damage;
+    mage.mana = mageDmg.manaSpent;
+  },
+  dragonAtack: function(dragonDamage) {
+    const dragonDmg = dragonDamage(dragon.strength);
+    warrior.healthPoints -= dragonDmg;
+    mage.healthPoints -= dragonDmg;
+    dragon.damage = dragonDmg;
+  },
+  turnResults: () => battleMembers,
+};
+
+gameActions.warriorAtack(warriorDamage);
+gameActions.mageAtack(mageDamage);
+gameActions.dragonAtack(dragonDamage);
+console.log(gameActions.turnResults());
