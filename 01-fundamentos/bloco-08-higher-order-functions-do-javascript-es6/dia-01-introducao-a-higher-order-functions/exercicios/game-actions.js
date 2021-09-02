@@ -25,3 +25,19 @@ const generateRandomNumber = (max, min) => Math.round(Math.random(max) * (max - 
 const dragonDamage = (dragonStrength) => generateRandomNumber(dragonStrength, 15);
 
 const warriorDamage = (strength, weaponDmg) => generateRandomNumber((strength * weaponDmg), strength);
+
+const mageAtack = (mana, intelligence) => {
+  const stats = {
+    manaSpent: 0,
+    damage: "Not enough mana",
+  }
+  if(mana > 15){
+    const minDmg = intelligence;
+    const maxDmg = intelligence * 2;
+    stats.manaSpent = 15;
+    stats.damage = generateRandomNumber(maxDmg, minDmg);
+  }
+  return stats;
+};
+
+console.log(mageAtack(mage.mana, mage.intelligence));
