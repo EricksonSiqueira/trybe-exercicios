@@ -23,3 +23,5 @@ const battleMembers = { mage, warrior, dragon };
 const generateRandomNumber = (max, min) => Math.round(Math.random(max) * (max - min) + min);
 
 const dragonDamage = (dragonStrength) => generateRandomNumber(dragonStrength, 15);
+
+const warriorDamage = (strength, weaponDmg) => generateRandomNumber((strength * weaponDmg), strength);
