@@ -78,7 +78,7 @@ function smallerName() {
   let smallerBookName = books[0].name;
   // escreva aqui o seu código
   books.forEach(book => {
-    if (book.name.length < smallerBookName.length ){
+    if (book.name.length < smallerBookName.length) {
       smallerBookName = book.name;
     }
   })
@@ -102,7 +102,7 @@ const expectedResult = {
 
 function getNamedBook() {
   // escreva seu código aqui
-  return books.find( book => book.name.length === 26);
+  return books.find(book => book.name.length === 26);
 }
 
 assert.deepStrictEqual(getNamedBook(), expectedResult);
@@ -155,8 +155,8 @@ const expectedResult2 = [
 
 function booksOrderedByReleaseYearDesc() {
   const bookclone = [];
-  books.forEach( book => bookclone.push(book));
-  
+  books.forEach(book => bookclone.push(book));
+
   return bookclone.sort((book1, book2) => book2.releaseYear - book1.releaseYear);
 }
 
@@ -166,7 +166,7 @@ const expectedResult3 = false;
 
 function everyoneWasBornOnSecXX() {
   // escreva seu código aqui
-   return (books.every( book => ( book.author.birthYear >= 1900 && book.author.birthYear < 2000) ));
+  return (books.every(book => (book.author.birthYear >= 1900 && book.author.birthYear < 2000)));
 }
 
 assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult3);
@@ -175,7 +175,16 @@ const expectedResult4 = true;
 
 function someBookWasReleaseOnThe80s() {
   // escreva seu código aqui
-  return books.some( (book) => (book.releaseYear >= 1980 && book.releaseYear < 1990) );
+  return books.some((book) => (book.releaseYear >= 1980 && book.releaseYear < 1990));
 }
 
 assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult4);
+
+const expectedResult5 = false;
+
+function authorUnique() {
+  // escreva seu código aqui
+  return (books.every( book => books.some( book2 => book.author.birthYear === book2.author.birthYear && book.author.name !== book2.author.name) ));
+}
+
+assert.strictEqual(authorUnique(), expectedResult5);
