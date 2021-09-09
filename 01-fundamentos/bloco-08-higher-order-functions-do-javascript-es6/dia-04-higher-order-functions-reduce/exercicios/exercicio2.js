@@ -66,18 +66,20 @@ const books = [
 // Adicione o código do exercício aqui:
 const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
+const concatAuthorsNames = (authorNames, book, index) => {
+  const arrLastPosition = books.length - 1;
+  let authorName = `${authorNames} ${book.author.name},`;
+
+  if (index === (arrLastPosition)) {
+    authorName = `${authorNames} ${book.author.name}.`
+  }
+
+  return authorName;
+}
+
 function reduceNames() {
   // escreva seu código aqui
-  const allAuthorNames = books.reduce((authorNames, book, index) => {
-    const arrLastPosition = books.length - 1;
-    let authorName = `${authorNames} ${book.author.name},`;
-
-    if (index === (arrLastPosition)) {
-      authorName = `${authorNames} ${book.author.name}.`
-    }
-
-    return authorName;
-  }, '');
+  const allAuthorNames = books.reduce(concatAuthorsNames, '');
 
   return allAuthorNames.trim();
 }
