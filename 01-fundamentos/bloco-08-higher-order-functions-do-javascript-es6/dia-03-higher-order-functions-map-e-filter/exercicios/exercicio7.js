@@ -70,8 +70,8 @@ function authorWith3DotsOnName() {
   // escreva seu código aqui
   const threeInitialsAuthor = books.find(book => {
     const splitedName = book.author.name.split('.');
-    const howManyDots = splitedName.length;
-    return howManyDots === 4;
+    const howManyDots = splitedName.length - 1;
+    return howManyDots === 3;
   })
 
   return threeInitialsAuthor.name;
