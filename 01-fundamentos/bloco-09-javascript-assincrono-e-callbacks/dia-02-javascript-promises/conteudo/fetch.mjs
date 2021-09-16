@@ -21,8 +21,7 @@
 
 // sendJokeToFriend("Anna");
 
-const fetch = require('node-fetch');
-
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 async function verifiedFetch(url) {
   if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
     return fetch(url)
