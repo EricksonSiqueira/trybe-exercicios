@@ -19,4 +19,4 @@ const addJoke = (joke) => {
   jokeContainer.appendChild(p);
 }
 
-fetchJoke();
+window.onload = () => fetchJoke();
