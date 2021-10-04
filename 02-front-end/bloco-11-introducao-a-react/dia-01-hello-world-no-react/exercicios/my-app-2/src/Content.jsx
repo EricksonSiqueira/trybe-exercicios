@@ -24,7 +24,7 @@ const conteudos = [
 
 function makeContentCard(content) {
   return (
-    <div className='card'>
+    <div key={content.conteudo} className='card'>
       <p>O conteúdo é: {content.conteudo}</p>
       <p>Status: {content.status}</p>
       <p>Bloco: {content.bloco}</p>
