@@ -1,0 +1,26 @@
+body {
+  background-color: #444;
+  text-align: center;
+  color: white;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  
+}
+
+.card {
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  background-color: rgb(9, 31, 102);
+  width: 250px;
+  height: 150px;
+  margin: 0 10px;
+}
+
+.footer {
+  margin-top: 20px;
+}
