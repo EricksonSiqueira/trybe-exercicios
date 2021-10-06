@@ -12,4 +12,9 @@ Greeting.propTypes = {
   lastName: PropTypes.string,
 };
 
+Greeting.defaultProps = {
+  name: 'Stranger',
+  lastName: 'da Silva',
+}
+
 export default Greeting;
