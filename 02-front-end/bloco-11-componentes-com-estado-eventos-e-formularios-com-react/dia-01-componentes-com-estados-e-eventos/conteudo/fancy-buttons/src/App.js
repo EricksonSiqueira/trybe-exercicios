@@ -10,15 +10,18 @@ class App extends React.Component {
     }
     this.handleClick = this.handleClick.bind(this);
   }
+  verifyNumber(num) {
+    return (num % 2) === 0 ? 'green': 'red';
+  }
   handleClick() {
     this.setState((previousState, _props) => ({
       numeroDeCliques: previousState.numeroDeCliques + 1,
     }))
-    console.log(this.state.numeroDeCliques);
   }
   render() {
+    const {numeroDeCliques} = this.state
     return (
-      <button onClick={this.handleClick}>{this.state.numeroDeCliques}</button>
+      <button style={{ backgroundColor: this.verifyNumber(numeroDeCliques) }} onClick={this.handleClick}>{numeroDeCliques}</button>
     );
 
   }
