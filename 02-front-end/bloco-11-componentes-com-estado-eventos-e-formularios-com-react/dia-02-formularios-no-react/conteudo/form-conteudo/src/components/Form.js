@@ -17,6 +17,7 @@ class Form extends Component {
       willCome: false,
       day: '08/09',
       file: '',
+      formularioComErros: false,
     }
 
   }
@@ -28,7 +29,7 @@ class Form extends Component {
   }
 
   render() {
-    const { favoritState, email, age, willCome, day } = this.state;
+    const { favoritState, email, age, willCome, day , formularioComErros } = this.state;
     return (
       <div>
         <h1>Meu primeiro formulário usando React</h1>
@@ -38,7 +39,7 @@ class Form extends Component {
           <fieldset>
             <legend>Informações do usuário</legend>
             <Email name="email" value={email} handleChange={this.handleChange} />
-            <Age name="age" value={age} handleChange={this.handleChange} />
+            <Age name="age" value={age} handleChange={this.handleChange} formularioComErros={formularioComErros}/>
           </fieldset>
           <label>
             Vai comparecer?

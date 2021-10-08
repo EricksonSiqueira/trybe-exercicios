@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 
 class Age extends Component {
   render() { 
-    const {value:age , handleChange} = this.props;
-    const error = Number(age) < 0 ? 'Idade inválida' : undefined;
+    const { value: age, handleChange } = this.props;
+    let error = (Number(age) < 0 ? 'Idade inválida': undefined);
+
     return (
       <label>
         Sua idade:
