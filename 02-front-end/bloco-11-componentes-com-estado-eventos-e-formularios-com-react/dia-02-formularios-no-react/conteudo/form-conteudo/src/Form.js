@@ -8,40 +8,60 @@ class Form extends Component {
 
     this.state = {
       favoritState: '',
+      email: '',
+      age: 0,
+      willCome:false,
+      day: '08/09',
     }
   }
 
   handleChange( {target} ) {
-    this.setState({favoritState: target.value})
+    const { name } = target;
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
+    this.setState({[name]: value})
   }
   render(){
+    const {favoritState ,email, age, willCome, day} = this.state;
     return(
       <div>
         <h1>Meu primeiro formulário usando React</h1>
         <form className="form">
           <label>
             Diga qual o seu Estado favorito! De React ou do Brasil, você decide! =)
-            <textarea name="estadoFavorito" value={this.state.favoritState} onChange={this.handleChange} />
+            <textarea name="favoritState" value={favoritState} onChange={this.handleChange} />
+          </label>
+          <label>
+            email:
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
           </label>
           <label>
             Sua idade:
             <input
               type="number"
-              name="idade"
+              name="age"
+              value={age}
+              onChange={this.handleChange}
             />
           </label>
           <label>
             Vai comparecer?
             <input
               type="checkbox"
-              name="vaiComparecer"
+              name="willCome"
+              value={willCome}
+              onChange={this.handleChange}
             />
           </label>
           Dia que vai comparecer:
-          <select>
-            <option>08/09</option>
-            <option>09/09</option>
-            <option>10/09</option>
+          <select name="day" value={day} onChange={this.handleChange}>
+            <option value="08/09">08/09</option>
+            <option value="09/09">09/09</option>
+            <option value="10/09">10/09</option>
           </select>
         </form>
       </div>
