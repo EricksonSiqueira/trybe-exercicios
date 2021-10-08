@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Age from './Age';
 import Email from './Email';
 import TextArea from './TextArea';
 
@@ -36,16 +37,8 @@ class Form extends Component {
             <TextArea name="favoritState" value={favoritState} handleChange={this.handleChange} />
           <fieldset>
             <legend>Informações do usuário</legend>
-            <Email name="email" value={email} handleChange={this.handleChange}/>
-            <label>
-              Sua idade:
-              <input
-                type="number"
-                name="age"
-                value={age}
-                onChange={this.handleChange}
-              />
-            </label>
+            <Email name="email" value={email} handleChange={this.handleChange} />
+            <Age name="age" value={age} handleChange={this.handleChange} />
           </fieldset>
           <label>
             Vai comparecer?
