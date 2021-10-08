@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextArea from './TextArea';
 
 class Form extends Component {
   constructor() {
@@ -30,10 +31,8 @@ class Form extends Component {
       <div>
         <h1>Meu primeiro formulário usando React</h1>
         <form className="form">
-          <label>
             Diga qual o seu Estado favorito! De React ou do Brasil, você decide! =)
-            <textarea name="favoritState" value={favoritState} onChange={this.handleChange} />
-          </label>
+            <TextArea name="favoritState" value={favoritState} handleChange={this.handleChange} />
           <fieldset>
             <legend>Informações do usuário</legend>
             <label>
