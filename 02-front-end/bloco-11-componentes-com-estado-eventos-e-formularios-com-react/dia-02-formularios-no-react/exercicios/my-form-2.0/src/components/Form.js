@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
+import InputText from './InputText';
 
 class Form extends Component {
   render() { 
     return (
     <form>
       <fieldset>
-        <label>
-          Nome
-          <input type="text"/>
-        </label>
+        <InputText labelText = "Name" charLim={40}/>
         <label>
           Email
           <input type="email" name="email" id="email"/>
