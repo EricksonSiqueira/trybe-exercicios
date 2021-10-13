@@ -11,7 +11,7 @@ class Form extends Component {
       cpf: '',
       adress: '',
       city: '',
-      home: '',
+      homeType: '',
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,18 +26,44 @@ class Form extends Component {
     return (
     <form>
       <fieldset>
-        <InputText name="name" labelText="Name" value={name} handleChange={this.handleChange}/>
-        <InputText name="email" labelText="email" value={email} handleChange={this.handleChange} />
-        <InputText name="cpf" labelText="CPF" value={cpf} handleChange={this.handleChange} />
-        <InputText name="adress" labelText="Endereço" value={adress} handleChange={this.handleChange} />
-        <InputText name="city" labelText="Cidade" value={city} handleChange={this.handleChange} />
+        <InputText 
+          name="name" 
+          labelText="Name" 
+          value={name} 
+          handleChange={this.handleChange}
+        />
+        <InputText 
+          name="email"
+          labelText="email" 
+          value={email}
+          handleChange={this.handleChange}
+        />
+        <InputText 
+          name="cpf"
+          labelText="CPF" 
+          value={cpf}
+          handleChange={this.handleChange} 
+        />
+        <InputText 
+        name="adress"
+        labelText="Endereço" 
+        value={adress}
+        handleChange={this.handleChange}
+        />
+        <InputText 
+          name="city"
+          labelText="Cidade"
+          value={city}
+          handleChange={this.handleChange} 
+        />
+        
         <label htmlFor="house">
           Casa
-        <input type="radio" name="home" id="house" value="casa"/>
+          <input type="radio" name="homeType" id="house" value="casa" onChange={this.handleChange} />
         </label>
         <label htmlFor="apart">
           Apartamento
-        <input type="radio" name="home" id="apart" value="apartamento"/>
+            <input type="radio" name="homeType" id="apart" value="apartamento" onChange={this.handleChange} />
         </label>
       </fieldset>
     </form>
