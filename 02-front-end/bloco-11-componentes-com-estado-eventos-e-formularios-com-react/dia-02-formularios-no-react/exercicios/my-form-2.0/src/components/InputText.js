@@ -8,11 +8,11 @@ class InputText extends React.Component {
     }
   }
   render() { 
-    const { labelText } = this.props;
+    const { labelText, name, handleChange, value:nameValue } = this.props;
     return (
       <label>
         {labelText}
-        <input onChange={this.handleChange} type="text"/>
+        <input onChange={handleChange} type="text" name={name} value={nameValue}/>
       </label>
     );
   }
