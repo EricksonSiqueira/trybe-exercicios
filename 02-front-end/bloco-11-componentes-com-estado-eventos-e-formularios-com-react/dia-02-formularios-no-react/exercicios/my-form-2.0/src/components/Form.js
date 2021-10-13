@@ -56,14 +56,25 @@ class Form extends Component {
           value={city}
           handleChange={this.handleChange} 
         />
-        
+
         <label htmlFor="house">
           Casa
-          <input type="radio" name="homeType" id="house" value="casa" onChange={this.handleChange} />
+          <input 
+            type="radio"
+            name="homeType"
+            id="house" value="casa"
+            onChange={this.handleChange}
+          />
         </label>
         <label htmlFor="apart">
           Apartamento
-            <input type="radio" name="homeType" id="apart" value="apartamento" onChange={this.handleChange} />
+            <input
+            type="radio"
+            name="homeType"
+            id="apart"
+            value="apartamento"
+            onChange={this.handleChange} 
+          />
         </label>
       </fieldset>
     </form>
