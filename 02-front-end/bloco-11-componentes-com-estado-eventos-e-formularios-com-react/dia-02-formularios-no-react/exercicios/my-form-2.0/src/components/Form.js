@@ -22,27 +22,15 @@ class Form extends Component {
     this.setState({[name]: value})
   }
   render() { 
-    const { name } = this.state;
+    const { name, email, cpf, adress, city } = this.state;
     return (
     <form>
       <fieldset>
-          <InputText name="name" labelText="Name" value={name} handleChange={this.handleChange}/>
-        <label>
-          Email
-          <input type="email" name="email" id="email"/>
-        </label>
-        <label>
-          CPF
-          <input type="text"/>
-        </label>
-        <label>
-          Endereço
-          <input type="text"/>
-        </label>
-        <label>
-          Cidade
-          <input type="text"/>
-        </label>
+        <InputText name="name" labelText="Name" value={name} handleChange={this.handleChange}/>
+        <InputText name="email" labelText="email" value={email} handleChange={this.handleChange} />
+        <InputText name="cpf" labelText="CPF" value={cpf} handleChange={this.handleChange} />
+        <InputText name="adress" labelText="Endereço" value={adress} handleChange={this.handleChange} />
+        <InputText name="city" labelText="Cidade" value={city} handleChange={this.handleChange} />
         <label htmlFor="house">
           Casa
         <input type="radio" name="home" id="house" value="casa"/>
