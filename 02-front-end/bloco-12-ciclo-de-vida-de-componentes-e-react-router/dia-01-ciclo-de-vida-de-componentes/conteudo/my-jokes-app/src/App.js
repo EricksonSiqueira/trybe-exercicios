@@ -1,7 +1,8 @@
+import DadJoke from "./components/DadJoke";
 function App() {
   return (
     <div className="App">
-      Nada
+      <DadJoke />
     </div>
   );
 }
