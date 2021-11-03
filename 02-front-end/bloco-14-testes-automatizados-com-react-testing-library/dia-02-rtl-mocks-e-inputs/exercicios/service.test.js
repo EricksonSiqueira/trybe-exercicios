@@ -1,4 +1,4 @@
-let randomNumber = require('./service');
+let { randomNumber } = require('./service');
 
 describe('Testes do arquivo service.', () => {
   it('Testando retorno da  função randomNumber', () => {
