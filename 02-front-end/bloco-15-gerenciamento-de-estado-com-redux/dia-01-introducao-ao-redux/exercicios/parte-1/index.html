@@ -38,14 +38,42 @@
         index: 0,
       };
 
+      const nextButton = document.getElementById('next');
+      const previousButton = document.getElementById('previous');
+
+      nextButton.addEventListener('click', () => {
+        store.dispatch({
+          type: 'NEXT_COLOR'
+        })
+      });
+
+      previousButton.addEventListener('click', () => {
+          store.dispatch({
+            type: 'PREVIOUS_COLOR'
+          })
+        });
+
       const reducer = (state = ESTADO_INICIAL, action) => {
+        console.log(`${state.index}`);
         switch(action.type) {
           case 'NEXT_COLOR':
+            if(state.index === state.colors.length - 1) {
+              return {
+                ...state,
+                index: 0
+              }
+            }
             return {
               ...state,
               index: state.index + 1,
             }
           case 'PREVIOUS_COLOR':
+            if (state.index === 0) {
+              return {
+                ...state,
+                index: state.colors.length - 1,
+              }
+            }
             return {
               ...state,
               index: state.index - 1,
@@ -55,7 +83,20 @@
         }
       }
 
+      
       const store = Redux.createStore(reducer);
+
+      store.subscribe(() => {
+        const state = store.getState();
+
+        const currentColor = state.colors[state.index];
+        const colorElement = document.getElementById('value');
+        colorElement.innerHTML = currentColor;
+
+        const container = document.getElementById('container');
+        container.style.backgroundColor = currentColor;
+        
+      });
     </script>
   </body>
 </html>
