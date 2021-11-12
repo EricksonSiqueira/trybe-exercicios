@@ -40,6 +40,16 @@
 
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch(action.type) {
+          case 'NEXT_COLOR':
+            return {
+              ...state,
+              index: state.index + 1,
+            }
+          case 'PREVIOUS_COLOR':
+            return {
+              ...state,
+              index: state.index - 1,
+            }
           default:
             return state;
         }
