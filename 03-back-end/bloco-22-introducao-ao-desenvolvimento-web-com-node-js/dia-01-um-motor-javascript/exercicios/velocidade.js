@@ -13,4 +13,4 @@ function getVelMedia () {
   console.log(`A velocidade média é ${velMedia.toFixed(2)} m/s`);
 }
 
-getVelMedia();
+module.exports = getVelMedia;

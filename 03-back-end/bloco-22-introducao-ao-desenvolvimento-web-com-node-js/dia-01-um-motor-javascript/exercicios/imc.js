@@ -29,5 +29,4 @@ function getPersonIMC() {
   return IMC;
 }
 
-
-getPersonIMC();
+module.exports = getPersonIMC;
