@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node readFileSync.js",
     "read": "node readFile.js",
-    "write": "node writeInFile.js"
+    "write": "node writeInFile.js",
+    "assWrite": "node writeFileAsyncAwait.js"
   },
   "keywords": [],
   "author": "",

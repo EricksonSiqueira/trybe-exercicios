@@ -1,1 +1,1 @@
-Esse é o novo texto do arquivo
+Esse agora está escrevendo assincronamente
