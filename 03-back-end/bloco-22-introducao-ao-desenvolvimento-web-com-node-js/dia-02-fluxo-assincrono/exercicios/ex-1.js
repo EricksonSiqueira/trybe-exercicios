@@ -11,8 +11,12 @@ const funcPromise = (num1, num2, num3) => new Promise((resolve, reject) => {
 });
 
 async function main() {
+  let param1 = Math.floor(Math.random() * 100 + 1);
+  let param2 = Math.floor(Math.random() * 100 + 1);
+  let param3 = Math.floor(Math.random() * 100 + 1);
+
   try{
-    const teste = await funcPromise(10, 20, 2);
+    const teste = await funcPromise(param1, param2, param3);
     console.log(teste);
   } catch(err) {
     console.error(err.message);
