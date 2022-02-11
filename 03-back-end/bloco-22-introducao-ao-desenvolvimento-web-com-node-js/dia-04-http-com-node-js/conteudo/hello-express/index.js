@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
   { id: 2, name: 'Macarrão a Bolonhesa', price: 35.0, waitTime: 25 },
@@ -16,12 +17,18 @@ const drinks = [
   { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+const sortArrayOfObjects = (array, key) => {
+  return array.sort((obj1, obj2) => obj1[key] > obj2[key] ? 1 : obj2[key] > obj1[key] ? -1 : 0);
+}
+
 app.get('/recipes', (_request, response) => {
-  response.json(recipes);
+  const sortedRecipes = sortArrayOfObjects(recipes, 'name');
+  response.json(sortedRecipes);
 });
 
 app.get('/drinks', (_request, response) => {
-  response.json(drinks);
+  const sortedDrinks = sortArrayOfObjects(drinks, 'name');
+  response.json(sortedDrinks);
 })
 
 app.listen(3001, () => {
