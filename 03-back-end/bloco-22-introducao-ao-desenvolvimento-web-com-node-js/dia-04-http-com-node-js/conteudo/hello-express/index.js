@@ -86,7 +86,55 @@ app.get('/validateToken', (request, response) => {
   response.status(200).json({ message: 'Valid token'});
 });
 
+app.put('/recipes/:id', (request, response) => {
+  const { id } = request.params;
+  const { name, price } = request.body;
+  const recipeIndex = recipes.findIndex(recipe => recipe.id === parseInt(id));
+  if(recipeIndex === -1) return response.status(404).json({ eror: 'Recipe not  found'});
 
+  recipes[recipeIndex] = { ...recipes[recipeIndex],name, price};
+
+  response.status(204).end();
+});
+
+app.put('/drinks/:id', (request, response) => {
+  const { id } = request.params;
+  const { name, price } = request.body;
+  const drinkIndex = drinks.findIndex(drink => drink.id === parseInt(id));
+  if (drinkIndex === -1) return response.status(404).json({ eror: 'drink not  found' });
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+
+  response.status(204).end();
+});
+
+//...
+
+app.delete('/recipes/:id', function (request, response) {
+  const { id } = request.params;
+  const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipeIndex === -1) return response.status(404).json({ message: 'Recipe not found!' });
+
+  recipes.splice(recipeIndex, 1);
+
+  response.status(204).end();
+});
+
+app.delete('/drinks/:id', function (request, response) {
+  const { id } = request.params;
+  const drinkIndex = drinks.findIndex((d) => d.id === parseInt(id));
+
+  if (drinkIndex === -1) return response.status(404).json({ message: 'drink not found!' });
+
+  drinks.splice(drinkIndex, 1);
+
+  response.status(204).end();
+});
+
+app.all('*', (request, response) => {
+  return response.status(404).json({ error: 'Route not found' });
+});
 
 app.listen(3001, () => {
   console.log('Aplicação está ouvindo na porta 3001');
