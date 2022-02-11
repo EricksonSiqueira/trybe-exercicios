@@ -4,3 +4,11 @@ GET http://localhost:3001/recipes
 ###
 
 GET http://localhost:3001/drinks
+
+###
+
+GET http://localhost:3001/recipes/3
+
+###
+
+GET http://localhost:3001/drinks/3

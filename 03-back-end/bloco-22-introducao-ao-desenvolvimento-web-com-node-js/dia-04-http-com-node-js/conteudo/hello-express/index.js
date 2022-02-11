@@ -26,6 +26,24 @@ app.get('/recipes', (_request, response) => {
   response.json(sortedRecipes);
 });
 
+app.get('/recipes/:id', (request, response) => {
+  const { id } = request.params;
+  const recipe = recipes.find(recipe => recipe.id === parseInt(id));
+
+  if(!recipe) return response.status(404).json({ error: 'Recipe not found'});
+
+  response.status(200).json(recipe);
+});
+
+app.get('/drinks/:id', (request, response) => {
+  const { id } = request.params;
+  const drink = drinks.find((drink) => drink.id === parseInt(id));
+
+  if(!drink) return response.status(404).json({ error: 'Drink not found'});
+
+  response.status(200).json(drink);
+})
+
 app.get('/drinks', (_request, response) => {
   const sortedDrinks = sortArrayOfObjects(drinks, 'name');
   response.json(sortedDrinks);
