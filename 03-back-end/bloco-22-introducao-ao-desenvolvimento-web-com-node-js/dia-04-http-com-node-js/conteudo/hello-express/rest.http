@@ -12,3 +12,11 @@ GET http://localhost:3001/recipes/3
 ###
 
 GET http://localhost:3001/drinks/3
+
+###
+
+GET http://localhost:3001/recipes/search?name=&minPrice=36
+
+###
+
+GET http://localhost:3001/drinks/search?name=suco

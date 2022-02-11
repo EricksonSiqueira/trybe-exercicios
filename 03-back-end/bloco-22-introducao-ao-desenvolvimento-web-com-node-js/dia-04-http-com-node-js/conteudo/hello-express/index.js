@@ -26,6 +26,17 @@ app.get('/recipes', (_request, response) => {
   response.json(sortedRecipes);
 });
 
+
+app.get('/recipes/search', (request, response) => {
+  const { name, minPrice } = request.query;
+  const recipesFound = recipes
+    .filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()) && recipe.price > parseInt(minPrice));
+
+  if (!recipesFound) return response.status(404).json({ error: 'Recipe not found' });
+
+  response.status(200).json(recipesFound);
+});
+
 app.get('/recipes/:id', (request, response) => {
   const { id } = request.params;
   const recipe = recipes.find(recipe => recipe.id === parseInt(id));
@@ -33,6 +44,15 @@ app.get('/recipes/:id', (request, response) => {
   if(!recipe) return response.status(404).json({ error: 'Recipe not found'});
 
   response.status(200).json(recipe);
+});
+
+app.get('/drinks/search', (request, response) => {
+  const { name } = request.query;
+  const drink = drinks.filter((drink) => drink.name.toLowerCase().includes(name.toLowerCase()));
+
+  if(!drink) return response.status(404).json({ error: 'Drink not found'});
+
+  response.status(200).json(drink);
 });
 
 app.get('/drinks/:id', (request, response) => {
