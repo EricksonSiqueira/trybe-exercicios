@@ -20,3 +20,19 @@ GET http://localhost:3001/recipes/search?name=&minPrice=36
 ###
 
 GET http://localhost:3001/drinks/search?name=suco
+
+###
+
+POST http://localhost:3001/recipes
+content-type: application/json
+
+{
+  "id" : 4,
+  "name": "Macarrão com Frango",
+  "price": 30
+}
+
+###
+
+GET http://localhost:3001/validateToken
+Authorization: S6xEzQUTypw4aj5A

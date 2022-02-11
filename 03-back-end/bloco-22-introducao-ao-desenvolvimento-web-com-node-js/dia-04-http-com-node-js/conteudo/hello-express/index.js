@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -62,12 +66,27 @@ app.get('/drinks/:id', (request, response) => {
   if(!drink) return response.status(404).json({ error: 'Drink not found'});
 
   response.status(200).json(drink);
-})
+});
 
 app.get('/drinks', (_request, response) => {
   const sortedDrinks = sortArrayOfObjects(drinks, 'name');
   response.json(sortedDrinks);
-})
+});
+
+app.post('/recipes', (request, response) => {
+  const { id, name, price } = request.body;
+  recipes.push({id, name, price});
+  response.status(201).json({ message: 'Recipe created sucessfully'});
+});
+
+app.get('/validateToken', (request, response) => {
+  const token = request.headers.authorization;
+  if(token.length !== 16) return response.status(401).json({ error: 'Invalid token'});
+
+  response.status(200).json({ message: 'Valid token'});
+});
+
+
 
 app.listen(3001, () => {
   console.log('Aplicação está ouvindo na porta 3001');
