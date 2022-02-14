@@ -8,3 +8,11 @@ content-type: application/json
   "username": "erickson",
   "password": "senhamuitosegura"
 }
+
+###
+POST http://localhost:3002/hello
+content-type: application/json
+
+{
+  "name": "Erickson"
+}
