@@ -1,0 +1,18 @@
+GET http://localhost:3001/open
+
+###
+GET http://localhost:3001/recipes
+content-type: application/json
+
+{
+  "username": "erickson",
+  "password": "senhamuitosegura"
+}
+
+###
+POST http://localhost:3002/hello
+content-type: application/json
+
+{
+  "name": "Erickson"
+}
