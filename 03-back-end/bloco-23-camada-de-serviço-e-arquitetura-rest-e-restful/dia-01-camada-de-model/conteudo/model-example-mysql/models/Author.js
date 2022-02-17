@@ -1,11 +1,15 @@
 const connection = require('./connection');
 
 const serialize = (authorData) => {
+  const fullName = [authorData.first_name, authorData.middle_name, authorData.last_name]
+    .filter((name) => name)
+    .join(' ');
   return{
     id: authorData.id,
     firstName: authorData.first_name,
     middleName: authorData.middle_name,
-    lastName: authorData.last_name
+    lastName: authorData.last_name,
+    fullName
   };
 }
 
