@@ -22,9 +22,15 @@ const serialize = (authorData) => ({
 })
 
 const getAll = async () => {
-  const [authors] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
+  try {
+    const [authors] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
+    return authors.map(serialize).map(getNewAuthor);
 
-  return authors.map(serialize).map(getNewAuthor);
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+
 }
 
 const findById = async (id) => {
@@ -38,7 +44,23 @@ const findById = async (id) => {
   return getNewAuthor({ id, firstName, middleName, lastName });
 }
 
+const isValid = (firstName, _middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+
+  return true;
+};
+
+const add = async (firstName, middleName, lastName) => {
+  const [author] = await connection.execute('INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)', 
+  [firstName, middleName, lastName]);
+
+  return author.insertId;
+}
+
 module.exports = { 
   getAll,
   findById,
+  isValid,
+  add
 }

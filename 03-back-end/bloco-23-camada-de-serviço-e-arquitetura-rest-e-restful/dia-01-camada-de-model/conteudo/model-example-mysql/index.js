@@ -1,14 +1,29 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
 const Author = require('./models/Author');
 const Book = require('./models/Book');
 
-app.get('/authors', async (req, res) => {
+app.use(bodyParser.json());
+
+app.get('/authors', async (_req, res) => {
   const authors = await Author.getAll();
 
   res.status(200).json(authors);
+});
+
+app.post('/authors', async (req, res, _next) => {
+  const { first_name, middle_name, last_name } = req.body;
+
+  if(!Author.isValid(first_name, middle_name, last_name)){
+    return res.status(400).json({ message: 'Invalid data'});
+  }
+
+  const authorId = await Author.add(first_name, middle_name, last_name);
+
+  return res.status(200).json({ id: authorId, first_name, middle_name, last_name});
 });
 
 app.get('/authors/:id', async (req, res) => {
