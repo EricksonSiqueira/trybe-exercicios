@@ -49,7 +49,16 @@ const add = async (firstName, lastName, email, password) => {
   }
 }
 
+const getAll = async () => {
+  const [users] = await connection.execute('SELECT * FROM model_example.user');
+
+  if(!users) return [];
+
+  return users;
+}
+
 module.exports = { 
   add,
   isValid,
+  getAll,
 }
