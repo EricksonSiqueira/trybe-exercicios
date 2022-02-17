@@ -57,8 +57,16 @@ const getAll = async () => {
   return users;
 }
 
+const getById = async (id) => {
+  const [user] = await connection.execute('SELECT * FROM model_example.user WHERE id=?', 
+  [id]);
+  if(!user) return null;
+  return user;
+}
+
 module.exports = { 
   add,
   isValid,
   getAll,
+  getById,
 }
