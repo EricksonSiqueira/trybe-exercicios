@@ -1,4 +1,6 @@
 GET http://localhost:3000/authors
+###
+GET http://localhost:3000/authors/2
 
 ###
 GET http://localhost:3000/books
