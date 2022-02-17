@@ -1,22 +1,30 @@
 const connection = require('./connection');
 
-const serialize = (authorData) => {
-  const fullName = [authorData.first_name, authorData.middle_name, authorData.last_name]
-    .filter((name) => name)
+const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
+  const fullName = [firstName, middleName, lastName]
+    .filter(Boolean)
     .join(' ');
-  return{
-    id: authorData.id,
-    firstName: authorData.first_name,
-    middleName: authorData.middle_name,
-    lastName: authorData.last_name,
-    fullName
+
+  return {
+    id,
+    firstName,
+    middleName,
+    lastName,
+    fullName,
   };
-}
+};
+
+const serialize = (authorData) => ({
+  id: authorData.id,
+  firstName: authorData.first_name,
+  middleName: authorData.middle_name,
+  lastName: authorData.last_name,
+})
 
 const getAll = async () => {
   const [authors] = await connection.execute('SELECT id, first_name, middle_name, last_name FROM authors');
 
-  return authors.map(serialize);
+  return authors.map(serialize).map(getNewAuthor);
 }
 
 module.exports = { 
