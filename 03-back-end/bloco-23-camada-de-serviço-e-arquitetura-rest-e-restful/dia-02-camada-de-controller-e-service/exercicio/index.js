@@ -14,4 +14,6 @@ app.get('/ping', (req, res) => {
 
 app.get('/cep/:cep', Cep.findByCep);
 
+app.post('/cep', Cep.postCep);
+
 app.listen(3000, () => console.log('Online na porta 3000'));

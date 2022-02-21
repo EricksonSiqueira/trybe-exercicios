@@ -11,4 +11,16 @@ const findByCep = async (cep) => {
   return cepObj;
 }
 
-module.exports = { findByCep };
+const postCep = async (cepInfo) => {
+  
+  const { cep } = cepInfo;
+  const cepFound = await CepModel.findByCep(cep);
+  
+  if (cepFound.length !== 0) return { error: { code: '409', message: 'CEP já existente'}};
+  
+  const cepObj = await CepModel.postCep(cepInfo);
+
+  return cepObj;
+}
+
+module.exports = { findByCep, postCep };
