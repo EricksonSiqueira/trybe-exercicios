@@ -20,7 +20,7 @@ const postCep = async (req, res) => {
 
   const cepObj = await CepService.postCep(cepInfo);
 
-  return res.status(200).json(cepObj);
+  return res.status(201).json(cepObj);
 }
 
 module.exports = { findByCep, postCep };
