@@ -1,4 +1,4 @@
-express = require('express');
+const express = require('express');
 const { User } = require('../models');
 const router = express.Router();
 
@@ -7,10 +7,10 @@ router.get('/', async (_req, res) => {
     const users = await User.findAll();
 
     return res.status(200).json(users);
-  } catch (error) {
-    console.log(error.message);
-    return res.status(500).json({message: 'Algo deu errado'});
-  }
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  };
 });
 
 
@@ -82,5 +82,6 @@ router.delete('/id', async (req, res) => {
     res.status(500).json({ message: 'Algo deu errado' });
   }
 });
+
 
 module.exports = router;
