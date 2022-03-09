@@ -1,3 +1,5 @@
+const validateJWT = require('../auth/validateJWT');
+
 const username = (req, res, next) => {
   const { username } =  req.body;
 
@@ -18,7 +20,27 @@ const password = (req, res, next) => {
   next();
 }
 
+const JWT = (req, res, next) => {
+  try {
+    const { authorization } = req.headers;
+
+    if(!authorization) return res.status(401).json({ message: 'Token not found' });
+
+    const userData = validateJWT(authorization);
+
+    if(!userData) return res.status(401).json({ message: '401 Unauthorized'});
+
+    req.userData = userData;
+    next();
+  } catch (err) {
+    console.log(err.message);
+
+    return res.status(500).json({ message: 'Something has gone wrong' });
+  }
+}
+
 module.exports = {
   username,
   password,
+  JWT,
 }
