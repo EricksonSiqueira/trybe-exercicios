@@ -10,7 +10,13 @@ module.exports = (req, res) => {
       algorithm: 'HS256'
     }
 
-    const token = jwt.sign({ username, admin: false }, 'segredo', jwtConfig);
+    let token;
+
+    if (username === 'admin' && password === 's3nh4S3gur4???'){
+      token = jwt.sign({ username, admin: true }, 'segredo', jwtConfig);
+    } else {
+      token = jwt.sign({ username, admin: false }, 'segredo', jwtConfig);
+    }
 
     return res.status(200).json({ token });
   } catch (err) {
