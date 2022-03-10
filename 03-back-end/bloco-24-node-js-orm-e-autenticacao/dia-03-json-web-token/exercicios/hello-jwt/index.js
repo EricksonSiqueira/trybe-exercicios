@@ -9,6 +9,7 @@ const controllers = require('./controllers');
 const middlewares = require('./middlewares');
 
 const validate = require('./middlewares/validations');
+const checkAdmin = require('./middlewares/admin');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/ping', controllers.ping);
 app.post('/login', validate.password, validate.username, controllers.login);
 app.get('/users/me', validate.JWT, controllers.user);
+app.get('/top-secret', validate.JWT, checkAdmin, controllers.topSecret);
 
 app.use(middlewares.error);
 
