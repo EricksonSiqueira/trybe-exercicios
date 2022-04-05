@@ -4,7 +4,7 @@ class Superclass {
 
   ) { }
 
-  sayHello():void {
+  public sayHello():void {
     console.log('Olá mundo!');
   }
 }

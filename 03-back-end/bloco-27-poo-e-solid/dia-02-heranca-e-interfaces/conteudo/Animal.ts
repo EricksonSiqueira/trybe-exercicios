@@ -18,6 +18,10 @@ class Mammal extends Animal {
 }
 
 class Bird extends Animal {
+  constructor(public name: string) {
+    super(name, new Date());
+  }
+
   fly() {
     console.log(`${this.name} está voando!`);
   }
@@ -34,7 +38,6 @@ const tiger = new Mammal(
 
 const parrot = new Bird(
   'Parrot',
-  new Date(Date.parse('Mar 10, 2019')),
 );
 
 const main = (animal: Animal) => {
