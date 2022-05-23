@@ -15,6 +15,11 @@ class BookModel {
     return books;
   }
 
+  public async createBook(bookData: object): Promise<IBook> {
+    const book = await this.bookModel.create(bookData);
+    return book;
+  }
+
 }
 
 export default BookModel;
