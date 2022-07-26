@@ -37,10 +37,27 @@ def selection_sort_v2(numbers):
   return numbers
 
 
+def insetion_sort(numbers):
+  n = len(numbers)
+
+  for index in range(1, n):
+    key = numbers[index]
+
+    new_position = index - 1
+    while new_position >= 0 and numbers[new_position] > key:
+      numbers[new_position +  1] = numbers[new_position]
+      new_position = new_position - 1
+    
+    numbers[new_position + 1] = key
+  
+  return numbers
+
+
+
 numbers = [7, 5, 9, 2, 6, 8, 10]
 
 print(f"Lista inicial: {numbers}")
 
-ordened_numbers = selection_sort_v2(numbers)
+ordened_numbers = insetion_sort(numbers)
 
 print(f"Lista ordenada: {ordened_numbers}")
