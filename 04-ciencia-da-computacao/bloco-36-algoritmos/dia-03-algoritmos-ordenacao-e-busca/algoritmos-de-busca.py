@@ -8,20 +8,21 @@ def linear_search(numbers, target):
 
 
 def binary_search(numbers, target):
-  start = 0
-  end = len(numbers)
+    start = 0
+    end = len(numbers)
 
-  while start <= end:
-    mid = (start + end) // 2
+    while start <= end:
+        mid = (start + end) // 2
 
-    if numbers[mid] == target:
-      return mid
+        if numbers[mid] == target:
+            return mid
 
-    if target < numbers[mid]:
-      end = mid - 1
-    
-    else:
-      start = mid + 1
+        if target < numbers[mid]:
+            end = mid - 1
+
+        else:
+            start = mid + 1
+
 
 element = 5
 array = [1, 2, 3, 4, 5, 6, 7]

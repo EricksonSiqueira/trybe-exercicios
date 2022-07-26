@@ -17,8 +17,8 @@ def partition(numbers, start, end):
     for index in range(start, end):
         # o indice será o elemento em análise no momento, ele passará por todos os elementos
         if numbers[index] <= pivot:
-          delimiter = delimiter + 1
-          numbers[index], numbers[delimiter] = numbers[delimiter], numbers[index]
+            delimiter = delimiter + 1
+            numbers[index], numbers[delimiter] = numbers[delimiter], numbers[index]
 
     numbers[delimiter + 1], numbers[end] = numbers[end], numbers[delimiter + 1]
 
